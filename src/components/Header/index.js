@@ -21,7 +21,7 @@ const Content = styled.div`
 const BrandName = styled.h1`
   color: white;
   display: block;
-  font-family: "Open Sans";
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.2rem;
