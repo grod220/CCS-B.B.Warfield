@@ -10,7 +10,8 @@
     "gatsby-plugin-styled-components": "^2.0.9",
     "react-helmet": "^5.2.0",
     "styled-components": "^3.1.6",
-    "typeface-open-sans": "0.0.54"
+    "typeface-open-sans": "0.0.54",
+    "typeface-open-sans-condensed": "0.0.54"
   },
   "keywords": [
     "gatsby"
