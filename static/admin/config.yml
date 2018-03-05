@@ -21,4 +21,4 @@ collections:
             widget: string
             fields:
               - { name: pretext, label: 'Mission pretext', widget: string }
-              - { name: mission, label: 'Mission Statement', widget: string }
+              - { name: mission-statement, label: 'Mission Statement', widget: string }
