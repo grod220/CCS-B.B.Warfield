@@ -16,7 +16,7 @@ const Container = styled.div`
       : ""};
   background-size: cover;
   background-position: 50%;
-  height: ${props => (props.isHomepage ? "35rem" : "inherit")};
+  height: ${props => (props.isHomepage ? "35rem" : "7rem")};
 `;
 
 const TopContent = styled.div`
@@ -41,7 +41,7 @@ const BrandName = styled.h1`
 
 const Nav = styled.ul`
   list-style-type: none;
-  width: 30.3125rem;
+  width: 25rem;
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
@@ -58,7 +58,7 @@ const MissionBlock = styled.div`
   display: ${props => (props.isHomepage ? "block" : "none")};
   color: white;
   width: 70rem;
-  margin-top: 9.6875rem;
+  margin-top: 9rem;
 `;
 
 const PrepText = styled.div`
@@ -70,7 +70,7 @@ const PrepText = styled.div`
 
 const Statement = styled.div`
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-size: 4.6rem;
+  font-size: 4.2rem;
   line-height: 4.5625rem;
   font-weight: 600;
   letter-spacing: -0.125rem;
