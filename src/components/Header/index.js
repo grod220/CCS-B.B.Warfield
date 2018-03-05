@@ -32,7 +32,7 @@ const TopContent = styled.div`
 
 const BrandName = styled.h1`
   display: block;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-family: Open Sans, Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.2rem;
@@ -45,7 +45,7 @@ const Nav = styled.ul`
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
-  font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
+  font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
   font-weight: 600;
   letter-spacing: 0.15rem;
   font-size: 0.875rem;
@@ -62,14 +62,14 @@ const MissionBlock = styled.div`
 `;
 
 const PreText = styled.div`
-  font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
+  font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
 `;
 
 const Statement = styled.div`
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-family: Open Sans, Arial, Helvetica, sans-serif;
   font-size: 4.2rem;
   line-height: 4.5625rem;
   font-weight: 600;
