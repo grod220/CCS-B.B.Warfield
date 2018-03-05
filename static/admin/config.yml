@@ -1,18 +1,11 @@
 backend:
   name: github
-  repo: 'grod220/CCS-B.B.Warfield'
+  repo: grod220/CCS-B.B.Warfield
   branch: master
+
 media_folder: static/uploads
-collections:
-  - name: dddd
-    label: sss
-    folder: src/markdown-content
-    create: true
-    fields:
-      - { name: pretext, label: 'Mission pretext', widget: string }
-      - { name: mission-statement, label: 'Mission Statement', widget: string }
-      - { name: service-times, label: 'Service Times Section', widget: string }
-      
+
+collections:   
   - label: "Site Content"
     name: "content"
     delete: false
@@ -21,7 +14,7 @@ collections:
     files:
       - label: "Homepage"
         name: "home"
-        file: "content/home.yml"
+        file: "src/content/home.yml"
         fields:
           - label: Mission Block
             name: mission
@@ -50,22 +43,3 @@ collections:
             fields:
               - {label: Name, name: name, widget: string}
               - {label: Address, name: address, widget: string}
-
-  - name: "settings"
-    label: "Settings"
-    delete: false # Prevent users from deleting documents in this collection
-    editor:
-      preview: false
-    files:
-      - name: "general"
-        label: "Site Settings"
-        file: "_data/settings.json"
-        description: "General Site Settings"
-        fields:
-          - {label: "Global title", name: "site_title", widget: "string"}
-          - label: "Post Settings"
-            name: posts
-            widget: "object"
-            fields:
-              - {label: "Number of posts on frontpage", name: front_limit, widget: number}
-              - {label: "Default Author", name: author, widget: string}
