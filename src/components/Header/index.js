@@ -61,7 +61,7 @@ const MissionBlock = styled.div`
   margin-top: 9rem;
 `;
 
-const PrepText = styled.div`
+const PreText = styled.div`
   font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
   font-weight: 500;
   text-transform: uppercase;
@@ -76,7 +76,7 @@ const Statement = styled.div`
   letter-spacing: -0.125rem;
 `;
 
-const Header = ({ isHomepage }) => (
+const Header = ({ isHomepage, content }) => (
   <Container isHomepage={isHomepage}>
     <TopContent isHomepage={isHomepage}>
       <BrandName>
@@ -98,8 +98,8 @@ const Header = ({ isHomepage }) => (
       </Nav>
     </TopContent>
     <MissionBlock isHomepage={isHomepage}>
-      <PrepText>We are focused on God's mission for us:</PrepText>
-      <Statement>Teach the Bible and have it transform our lives.</Statement>
+      <PreText>{content.mission.pretext}</PreText>
+      <Statement>{content.mission.mission_statement}</Statement>
     </MissionBlock>
   </Container>
 );
