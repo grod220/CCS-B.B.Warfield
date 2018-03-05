@@ -23,11 +23,10 @@ collections:
               - { name: pretext, label: 'Mission pretext', widget: string }
               - { name: mission-statement, label: 'Mission Statement', widget: string }
           - {label: Title, name: title, widget: string}
-          - {label: Intro, name: intro, widget: markdown}
+          - {label: Intro, name: intro, widget: string}
           - label: Team
             name: team
             widget: list
             fields:
               - {label: Name, name: name, widget: string}
               - {label: Position, name: position, widget: string}
-              - {label: Photo, name: photo, widget: image}
