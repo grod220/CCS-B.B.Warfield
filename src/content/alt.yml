@@ -1,5 +1,5 @@
-mission: why not
+mission: 
+  pretext: pree text ?
+  mission-statement: some mission
 
-pretext: Hello there
-
-mission-statement: what's up dudeeeeee
+service-time: "10pm"

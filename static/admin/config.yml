@@ -18,17 +18,19 @@ collections:
         fields:
           - label: Mission Block
             name: mission
-            widget: string
+            widget: object
             fields:
               - { name: pretext, label: 'Mission pretext', widget: string }
               - { name: mission-statement, label: 'Mission Statement', widget: string }
-      - label: "alt"
-        name: "alt"
-        file: "src/content/alt.yml"
+          - {label: Service Times, name: service-times, widget: string}
+      - label: "Homepage"
+        name: "home"
+        file: "src/content/home.yml"
         fields:
           - label: Mission Block
             name: mission
-            widget: string
+            widget: object
             fields:
               - { name: pretext, label: 'Mission pretext', widget: string }
               - { name: mission-statement, label: 'Mission Statement', widget: string }
+          - {label: Service Times, name: service-times, widget: string}
