@@ -14,7 +14,11 @@ const TemplateWrapper = ({ children, location, data }) => (
         { name: "keywords", content: "sample, something" }
       ]}
     />
-    <Header isHomepage={location.pathname === "/"} content={data.contentYaml} />
+    <Header
+      isHomepage={location.pathname === "/"}
+      content={data.contentYaml}
+      dataSizes={data.hero.sizes}
+    />
     <div
       style={{
         margin: "0 auto",
@@ -40,6 +44,11 @@ export const query = graphql`
       mission {
         pretext
         mission_statement
+      }
+    }
+    hero: imageSharp(id: { regex: "/hero-night.jpg/" }) {
+      sizes(maxWidth: 1240) {
+        ...GatsbyImageSharpSizes
       }
     }
   }

@@ -1,21 +1,17 @@
 import React from "react";
 import Link from "gatsby-link";
 import styled from "styled-components";
+import Img from "gatsby-image";
 require("typeface-open-sans");
 require("typeface-open-sans-condensed");
-import NighttimeHeroImg from "./test.png";
 
 const Container = styled.div`
   margin-bottom: 1.45rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${props =>
-    props.isHomepage
-      ? `#111111 url(${NighttimeHeroImg}) no-repeat center 0`
-      : ""};
-  background-size: cover;
-  background-position: 50%;
+  position: relative;
+  overflow: hidden;
   height: ${props => (props.isHomepage ? "35rem" : "7rem")};
 `;
 
@@ -24,6 +20,7 @@ const TopContent = styled.div`
   justify-content: space-between;
   width: 70rem;
   margin-top: 2.5rem;
+  z-index: 2;
   a {
     text-decoration: none;
     color: ${props => (props.isHomepage ? "White" : "Black")};
@@ -59,6 +56,7 @@ const MissionBlock = styled.div`
   color: white;
   width: 70rem;
   margin-top: 9rem;
+  z-index: 2;
 `;
 
 const PreText = styled.div`
@@ -70,38 +68,55 @@ const PreText = styled.div`
 
 const Statement = styled.div`
   font-family: Open Sans, Arial, Helvetica, sans-serif;
-  font-size: 4.2rem;
+  font-size: 4.5rem;
   line-height: 4.5625rem;
   font-weight: 600;
   letter-spacing: -0.125rem;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
 `;
 
-const Header = ({ isHomepage, content }) => (
-  <Container isHomepage={isHomepage}>
-    <TopContent isHomepage={isHomepage}>
-      <BrandName>
-        <Link to="/">Calvary Chapel Stockholm</Link>
-      </BrandName>
-      <Nav>
-        <li>
-          <Link to="/about">About Us</Link>
-        </li>
-        <li>
-          <Link to="/giving">Giving</Link>
-        </li>
-        <li>
-          <Link to="/calendar">Calendar</Link>
-        </li>
-        <li>
-          <Link to="/getintouch">Get in touch</Link>
-        </li>
-      </Nav>
-    </TopContent>
-    <MissionBlock isHomepage={isHomepage}>
-      <PreText>{content.mission.pretext}</PreText>
-      <Statement>{content.mission.mission_statement}</Statement>
-    </MissionBlock>
-  </Container>
+const Header = ({ isHomepage, content, dataSizes }) => (
+  <div>
+    <Container isHomepage={isHomepage}>
+      {isHomepage ? (
+        <Img
+          sizes={dataSizes}
+          style={{
+            position: "absolute",
+            left: 0,
+            top: 0,
+            width: "100%",
+            height: "100%"
+          }}
+        />
+      ) : (
+        ""
+      )}
+      <TopContent isHomepage={isHomepage}>
+        <BrandName>
+          <Link to="/">Calvary Chapel Stockholm</Link>
+        </BrandName>
+        <Nav>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/giving">Giving</Link>
+          </li>
+          <li>
+            <Link to="/calendar">Calendar</Link>
+          </li>
+          <li>
+            <Link to="/getintouch">Get in touch</Link>
+          </li>
+        </Nav>
+      </TopContent>
+      <MissionBlock isHomepage={isHomepage}>
+        <PreText>{content.mission.pretext}</PreText>
+        <Statement>{content.mission.mission_statement}</Statement>
+      </MissionBlock>
+    </Container>
+  </div>
 );
 
 export default Header;
