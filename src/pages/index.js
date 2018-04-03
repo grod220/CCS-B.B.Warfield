@@ -3,18 +3,21 @@ import Link from "gatsby-link";
 import styled from "styled-components";
 import Img from "gatsby-image";
 
-const TempBlock = styled.div`
-  height: 600px;
-  width: 100%;
-  background-color: black;
+const Container = styled.div`
+  width: 70rem;
+  margin: 2.5rem auto 0;
+  left: 0;
+  right: 0;
 `;
 
 const MissionBlock = styled.div`
-  display: ${props => (props.isHomepage ? "block" : "none")};
   color: white;
   width: 70rem;
-  margin-top: 9rem;
-  z-index: 2;
+  position: absolute;
+  bottom: 31%;
+  margin: 0 auto 0;
+  left: 0;
+  right: 0;
 `;
 
 const PreText = styled.div`
@@ -33,17 +36,49 @@ const Statement = styled.div`
   text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
 `;
 
+const HeaderBlock = styled.div`
+  width: 100vw;
+  height: 100vh;
+  min-height: 510px;
+  z-index: -1;
+  position: relative;
+
+  /* Very hacky way of coercing gastby-image to be a background  */
+  > div:first-child {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    > div {
+      position: absolute;
+      overflow: hidden;
+      top: 0px;
+      width: 100%;
+      max-height: 100%;
+      z-index: -1;
+    }
+  }
+`;
+
 const IndexPage = ({ data: { contentYaml, hero } }) => (
   <div>
-    <Img
-      sizes={hero.sizes}
-      style={{
-        left: 0,
-        top: 0,
-        width: "100vw",
-        height: "100vh"
-      }}
-    />
+    <HeaderBlock>
+      <Img
+        sizes={hero.sizes}
+        style={{
+          position: "absolute",
+          top: 0,
+          maxWidth: "100%",
+          maxHeight: "100%",
+          zIndex: -1
+        }}
+      />
+      {/* <Container> */}
+      <MissionBlock>
+        <PreText>{contentYaml.mission.pretext}</PreText>
+        <Statement>{contentYaml.mission.mission_statement}</Statement>
+      </MissionBlock>
+    </HeaderBlock>
     <h1>Hi people</h1>
     <h3>Service times: {contentYaml.service_times}</h3>
     <p>Welcome to your new Gatsby site.</p>
@@ -82,18 +117,20 @@ const IndexPage = ({ data: { contentYaml, hero } }) => (
     <h3>Service times: {contentYaml.service_times}</h3>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
+    {/* </Container> */}
   </div>
 );
 
 export default IndexPage;
 
 export const query = graphql`
-  query HeaderQuery {
+  query HomepageQuery {
     contentYaml {
       mission {
         pretext
         mission_statement
       }
+      service_times
     }
     hero: imageSharp(id: { regex: "/hero-night.jpg/" }) {
       sizes(maxWidth: 1240) {
