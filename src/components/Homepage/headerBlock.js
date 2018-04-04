@@ -1,22 +1,32 @@
 import React from "react";
-import styled from "styled-components"
+import styled from "styled-components";
 import HeroImg from "../../images/hero-night.jpg";
+import { Parallax } from "react-scroll-parallax";
 
 const Container = styled.div`
+  height: 100vh;
+  min-height: 540px;
+  overflow: hidden;
+  position: relative;
+`;
+
+const WithBackground = styled.div`
+  background: url(${HeroImg});
   width: 100vw;
   height: 100vh;
   min-height: 540px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url(${HeroImg}) no-repeat center center fixed;
   background-size: cover;
-  background-attachment: scroll;
+  background-position: center;
 `;
 
 const MissionBlock = styled.div`
   color: white;
   width: 70rem;
+  position: absolute;
+  bottom: 30%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 `;
 
 const PreText = styled.div`
@@ -35,13 +45,16 @@ const Statement = styled.div`
   text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
 `;
 
-const HeaderBlock = ({pretext, missionStatement}) => (
-    <Container>
-      <MissionBlock>
-        <PreText>{pretext}</PreText>
-        <Statement>{missionStatement}</Statement>
-      </MissionBlock>
-    </Container>
+const HeaderBlock = ({ pretext, missionStatement }) => (
+  <Container>
+    <Parallax offsetYMin={-50} offsetYMax={50} slowerScrollRate>
+      <WithBackground />
+    </Parallax>
+    <MissionBlock>
+      <PreText>{pretext}</PreText>
+      <Statement>{missionStatement}</Statement>
+    </MissionBlock>
+  </Container>
 );
 
 export default HeaderBlock;

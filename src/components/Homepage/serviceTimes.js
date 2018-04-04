@@ -10,7 +10,7 @@ const Container = styled.div`
 `;
 
 const ServiceTimes = ({serviceTimes}) => (
-  <div>
+  <Container>
     <h1>Hi people</h1>
     <h3>Service times: {serviceTimes}</h3>
     <p>Welcome to your new Gatsby site.</p>
@@ -49,7 +49,7 @@ const ServiceTimes = ({serviceTimes}) => (
     <h3>Service times: {serviceTimes}</h3>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-  </div>
+  </Container>
 );
 
 export default ServiceTimes;
