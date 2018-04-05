@@ -34,6 +34,7 @@ const PreText = styled.div`
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.2813rem;
+  font-size: 1.125rem;
 `;
 
 const Statement = styled.div`
