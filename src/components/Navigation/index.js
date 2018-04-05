@@ -7,8 +7,8 @@ require("typeface-open-sans-condensed");
 
 const Container = styled.div`
   position: absolute;
-  width: 70rem;
-  margin: 2.5rem auto 0;
+  width: 78.75rem;
+  margin: 2.8125rem auto 0;
   left: 0;
   right: 0;
   display: flex;
@@ -25,20 +25,20 @@ const BrandName = styled.h1`
   font-family: Open Sans, Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 1.2rem;
-  letter-spacing: 0.3rem;
+  font-size: 1.35rem;
+  letter-spacing: 0.3375rem;
 `;
 
 const Nav = styled.ul`
   list-style-type: none;
-  width: 34rem;
+  width: 38.25rem;
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
   font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
   font-weight: 600;
-  letter-spacing: 0.12rem;
-  font-size: 0.875rem;
+  letter-spacing: 0.135rem;
+  font-size: 0.9844rem;
   li {
     display: inline;
   }
