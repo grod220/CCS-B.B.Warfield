@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 import styled from "styled-components"
 
 const Container = styled.div`
-  width: 70rem;
+  width: 100vw;
   margin: 2.5rem auto 0;
   left: 0;
   right: 0;
