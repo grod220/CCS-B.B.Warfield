@@ -10,14 +10,14 @@ const Container = styled.div`
   position: relative;
 `;
 
-const WithBackground = styled.div`
-  background: url(${HeroImg});
-  width: 100vw;
-  height: 100vh;
-  min-height: 33.75rem;
-  background-size: cover;
-  background-position: center;
-`;
+// const WithBackground = styled.div`
+//   background: url(${HeroImg});
+//   width: 100vw;
+//   height: 100vh;
+//   min-height: 33.75rem;
+//   background-size: cover;
+//   background-position: center;
+// `;
 
 const MissionBlock = styled.div`
   color: white;
@@ -59,6 +59,7 @@ class HeaderBlock extends React.Component {
     const { pretext, missionStatement } = this.props;
     return (
       <Container>
+        <h1>PUSH DOWN</h1>
         <ParallaxBanner
           layers={[
             {
