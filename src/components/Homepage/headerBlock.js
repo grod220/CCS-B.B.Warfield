@@ -4,7 +4,7 @@ import HeroImg from "../../images/hero-night.jpg";
 import { ParallaxBanner } from "react-scroll-parallax";
 
 const Container = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
   min-height: 33.75rem;
   overflow: hidden;
   position: relative;
