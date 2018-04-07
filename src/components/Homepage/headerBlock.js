@@ -60,16 +60,15 @@ class HeaderBlock extends React.Component {
     return (
       <Container>
         <ParallaxBanner
-          className="your-class"
           layers={[
             {
               image: HeroImg,
-              amount: 0.2,
+              amount: 0.1,
               slowerScrollRate: true
             }
           ]}
           style={{
-            height: "500px"
+            height: "100vh"
           }}
         >
           <h1>Banner Children</h1>
