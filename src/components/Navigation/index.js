@@ -97,7 +97,7 @@ const MobileMenu = styled.div`
   height: 100%;
   background-color: #212121;
   position: fixed;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   bottom: 0;
   right: 0;
