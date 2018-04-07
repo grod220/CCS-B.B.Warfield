@@ -1,4 +1,8 @@
-html {
+body {
+  margin: 0;
+}
+
+/* html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -616,4 +620,4 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: "";
-}
+} */

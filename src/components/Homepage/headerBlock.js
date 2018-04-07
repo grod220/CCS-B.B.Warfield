@@ -63,7 +63,7 @@ class HeaderBlock extends React.Component {
           layers={[
             {
               image: HeroImg,
-              amount: 0.1,
+              amount: 0.13,
               slowerScrollRate: true
             }
           ]}
