@@ -46,16 +46,43 @@ const Statement = styled.div`
   text-shadow: 0.25rem 0.25rem 0rem rgba(0, 0, 0, 0.4);
 `;
 
-const HeaderBlock = ({ pretext, missionStatement }) => (
-  <Container>
-    <Parallax offsetYMin={-50} offsetYMax={50} slowerScrollRate>
-      <WithBackground />
-    </Parallax>
-    <MissionBlock>
-      <PreText>{pretext}</PreText>
-      <Statement>{missionStatement}</Statement>
-    </MissionBlock>
-  </Container>
-);
+class HeaderBlock extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      windowHeight: "",
+      domNode: ''
+    }
+  }
+
+  componentDidMount() {
+    this.setState({windowHeight: window.innerHeight, domNode: document.querySelector('#hero-img')})
+    window.addEventListener("scroll", this.handleScroll.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll.bind(this));
+  }
+
+  handleScroll(e) {
+    console.log(this.state)
+    this.state.domNode.style.height = this.state.windowHeight + 'px';
+  }
+
+  render() {
+    const { pretext, missionStatement } = this.props;
+    return (
+      <Container>
+        <Parallax offsetYMin={-50} offsetYMax={50} slowerScrollRate>
+          <WithBackground id="hero-img" />
+        </Parallax>
+        <MissionBlock>
+          <PreText>{pretext}</PreText>
+          <Statement>{missionStatement}</Statement>
+        </MissionBlock>
+      </Container>
+    );
+  }
+}
 
 export default HeaderBlock;
