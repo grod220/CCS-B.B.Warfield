@@ -93,8 +93,8 @@ const Item = styled.li`
 `;
 
 const MobileMenu = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: #212121;
   position: fixed;
   -webkit-backface-visibility: hidden;
