@@ -74,6 +74,21 @@ class HeaderBlock extends React.Component {
         >
           <h1>Banner Children</h1>
         </ParallaxBanner>
+        <h1>PUSH DOWN</h1>
+        <ParallaxBanner
+          layers={[
+            {
+              image: HeroImg,
+              amount: 0.13,
+              slowerScrollRate: true
+            }
+          ]}
+          style={{
+            height: "100vh"
+          }}
+        >
+          <h1>Banner Children</h1>
+        </ParallaxBanner>
         {/* <MissionBlock>
           <PreText>{pretext}</PreText>
           <Statement>{missionStatement}</Statement>
