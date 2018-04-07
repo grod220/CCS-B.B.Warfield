@@ -56,7 +56,7 @@ class HeaderBlock extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({windowHeight: window.innerHeight, domNode: document.querySelector('#hero-img')})
+    this.setState({windowHeight: screen.height, domNode: document.querySelector('#hero-img')})
     window.addEventListener("scroll", this.handleScroll.bind(this));
   }
 
