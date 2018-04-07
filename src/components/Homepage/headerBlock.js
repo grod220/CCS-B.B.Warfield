@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import HeroImg from "../../images/hero-night.jpg";
-import { ParallaxBanner } from "react-scroll-parallax";
+import { Parallax } from "react-scroll-parallax";
 
 const Container = styled.div`
   /* height: 100vh; */
@@ -10,14 +10,14 @@ const Container = styled.div`
   position: relative;
 `;
 
-// const WithBackground = styled.div`
-//   background: url(${HeroImg});
-//   width: 100vw;
-//   height: 100vh;
-//   min-height: 33.75rem;
-//   background-size: cover;
-//   background-position: center;
-// `;
+const WithBackground = styled.div`
+  background: url(${HeroImg});
+  width: 100vw;
+  height: 100vh;
+  min-height: 33.75rem;
+  background-size: cover;
+  background-position: center;
+`;
 
 const MissionBlock = styled.div`
   color: white;
@@ -59,40 +59,13 @@ class HeaderBlock extends React.Component {
     const { pretext, missionStatement } = this.props;
     return (
       <Container>
-        <h1>PUSH DOWN</h1>
-        <ParallaxBanner
-          layers={[
-            {
-              image: HeroImg,
-              amount: 0.13,
-              slowerScrollRate: true
-            }
-          ]}
-          style={{
-            height: "100vh"
-          }}
-        >
-          <h1>Banner Children</h1>
-        </ParallaxBanner>
-        <h1>PUSH DOWN</h1>
-        <ParallaxBanner
-          layers={[
-            {
-              image: HeroImg,
-              amount: 0.13,
-              slowerScrollRate: true
-            }
-          ]}
-          style={{
-            height: "100vh"
-          }}
-        >
-          <h1>Banner Children</h1>
-        </ParallaxBanner>
-        {/* <MissionBlock>
+        <Parallax offsetYMin={-50} offsetYMax={50} slowerScrollRate>
+          <WithBackground id="hero-img" />
+        </Parallax>
+        <MissionBlock>
           <PreText>{pretext}</PreText>
           <Statement>{missionStatement}</Statement>
-        </MissionBlock> */}
+        </MissionBlock>
       </Container>
     );
   }
