@@ -17,6 +17,7 @@ const WithBackground = styled.div`
   min-height: 33.75rem;
   background-size: cover;
   background-position: center;
+  transition: height 3s ease;
 `;
 
 const MissionBlock = styled.div`
@@ -56,18 +57,19 @@ class HeaderBlock extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({windowHeight: screen.height, domNode: document.querySelector('#hero-img')})
-    window.addEventListener("scroll", this.handleScroll.bind(this));
+    document.querySelector('#hero-img').style.height = window.innerHeight + 'px';
+    // this.setState({windowHeight: window.innerHeight, domNode: document.querySelector('#hero-img')})
+    // window.addEventListener("scroll", this.handleScroll.bind(this));
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll.bind(this));
+    // window.removeEventListener("scroll", this.handleScroll.bind(this));
   }
 
-  handleScroll(e) {
-    console.log(this.state)
-    this.state.domNode.style.height = this.state.windowHeight + 'px';
-  }
+  // handleScroll(e) {
+  //   console.log(this.state)
+  //   this.state.domNode.style.height = this.state.windowHeight / 2 + 'px';
+  // }
 
   render() {
     const { pretext, missionStatement } = this.props;
