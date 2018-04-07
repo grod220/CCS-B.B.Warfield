@@ -93,16 +93,10 @@ const Item = styled.li`
 `;
 
 const MobileMenu = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #212121;
-  position: fixed;
-  -webkit-backface-visibility: hidden;
-  /* position: absolute; */
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  position: absolute;
   z-index: ${props => (props.mobileMenuActive ? 99 : -99)};
   transition: all 0.25s ease;
   opacity: ${props => (props.mobileMenuActive ? 0.98 : 0)};

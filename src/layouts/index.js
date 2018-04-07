@@ -6,12 +6,17 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import "./index.css";
 
+import styled from "styled-components";
+const Container = styled.div`
+  position: relative;
+`
+
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <Container>
     <Navigation />
     <ParallaxProvider>{children()}</ParallaxProvider>
     <Footer />
-  </div>
+  </Container>
 );
 
 TemplateWrapper.propTypes = {

@@ -12,8 +12,7 @@ const IndexPage = ({ data: { contentYaml } }) => (
       title="You've made it to the homepage"
       meta={[
         { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" },
-        { name: "viewport", content: "user-scalable=no" }
+        { name: "keywords", content: "sample, something" }
       ]}
     />
     <HeaderBlock
