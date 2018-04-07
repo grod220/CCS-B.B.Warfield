@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import HeroImg from "../../images/hero-night.jpg";
-import { Parallax } from "react-scroll-parallax";
+import { ParallaxBanner } from "react-scroll-parallax";
 
 const Container = styled.div`
   height: 100vh;
@@ -51,21 +51,33 @@ class HeaderBlock extends React.Component {
     super();
     this.state = {
       windowHeight: "",
-      domNode: ''
-    }
+      domNode: ""
+    };
   }
 
   render() {
     const { pretext, missionStatement } = this.props;
     return (
       <Container>
-        <Parallax offsetYMin={-50} offsetYMax={50} slowerScrollRate>
-          <WithBackground id="hero-img" />
-        </Parallax>
-        <MissionBlock>
+        <ParallaxBanner
+          className="your-class"
+          layers={[
+            {
+              image: HeroImg,
+              amount: 0.2,
+              slowerScrollRate: true
+            }
+          ]}
+          style={{
+            height: "500px"
+          }}
+        >
+          <h1>Banner Children</h1>
+        </ParallaxBanner>
+        {/* <MissionBlock>
           <PreText>{pretext}</PreText>
           <Statement>{missionStatement}</Statement>
-        </MissionBlock>
+        </MissionBlock> */}
       </Container>
     );
   }
