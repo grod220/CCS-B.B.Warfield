@@ -21,12 +21,9 @@ const Container = styled.div`
   }
 
   @media (max-width: 46.5625rem) {
+    width: 72vw;
     align-items: center;
-
-    &:after {
-      content: "";
-      width: 2.875rem;
-    }
+    flex-direction: column;
   }
 
   a {
@@ -45,6 +42,7 @@ const BrandName = styled.h1`
   margin-right: 2rem;
   flex-shrink: 0;
   text-align: center;
+  position: relative;
 
   @media (max-width: 46.5625rem) {
     font-size: calc(1rem + 1.5vw);
@@ -63,16 +61,34 @@ const Nav = styled.ul`
   text-align: right;
   margin-left: 0;
 
-  @media (max-width: 46.5625rem) {
-    display: none;
-  }
-
   li {
     &:first-child {
       margin-left: 0;
     }
-    display: inline-block;
-    margin-left: 3rem;
+  }
+
+  @media (max-width: 46.5625rem) {
+    width: 12.5rem;
+    text-align: center;
+    margin-top: ${props => (props.mobileMenuActive ? "4vh" : "-300vh")};
+    margin-left: ${props => (props.mobileMenuActive ? "" : "-300vw")};
+    font-size: 1.875rem;
+    line-height: 14vh;
+  }
+`;
+
+const Item = styled.li`
+  display: inline-block;
+  margin-left: 3rem;
+
+  @media (max-width: 46.5625rem) {
+    display: block;
+    margin-left: 0;
+    margin-top: ${props => (props.mobileMenuActive ? 0 : '-1.25rem')};
+    opacity: ${props => (props.mobileMenuActive ? 1 : 0)};
+    transition: opacity 2s ease, margin .5s ease;
+    transition-delay: ${props => props.delay + "ms"};
+    animation: fadein 2s forwards;
   }
 `;
 
@@ -89,6 +105,14 @@ const MobileMenu = styled.div`
   transition: all 0.25s ease;
   opacity: ${props => (props.mobileMenuActive ? 0.98 : 0)};
 `;
+
+const menuList = [
+  "Sundays",
+  "Who we are",
+  "Calendar",
+  "Giving",
+  "Get in touch"
+];
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -107,39 +131,30 @@ class Navigation extends React.Component {
     return (
       <div>
         <Container>
-          <Hamburger
-            mobileMenuActive={this.state.showMobileMenu}
-            triggerFunc={this.toggleMobileMenu()}
-          />
-          <BrandName onClick={this.toggleMobileMenu(false)}>
-            <Link to="/">Calvary Stockholm</Link>
+          <BrandName>
+            <Hamburger
+              mobileMenuActive={this.state.showMobileMenu}
+              triggerFunc={this.toggleMobileMenu()}
+            />
+            <Link to="/" onClick={this.toggleMobileMenu(false)}>
+              Calvary Stockholm
+            </Link>
           </BrandName>
-          <Nav>
-            <li>
-              <Link to="/about" onClick={this.toggleMobileMenu(false)}>
-                Sundays
-              </Link>
-            </li>
-            <li>
-              <Link to="/whoweare" onClick={this.toggleMobileMenu(false)}>
-                Who we are
-              </Link>
-            </li>
-            <li>
-              <Link to="/calendar" onClick={this.toggleMobileMenu(false)}>
-                Calendar
-              </Link>
-            </li>
-            <li>
-              <Link to="/giving" onClick={this.toggleMobileMenu(false)}>
-                Giving
-              </Link>
-            </li>
-            <li>
-              <Link to="/getintouch" onClick={this.toggleMobileMenu(false)}>
-                Get in touch
-              </Link>
-            </li>
+          <Nav mobileMenuActive={this.state.showMobileMenu}>
+            {menuList.map((itemTitle, index) => (
+              <Item
+                mobileMenuActive={this.state.showMobileMenu}
+                delay={index * 125}
+                key={index}
+              >
+                <Link
+                  to={"/" + itemTitle.toLocaleLowerCase().replace(/ /g, "")}
+                  onClick={this.toggleMobileMenu(false)}
+                >
+                  {itemTitle}
+                </Link>
+              </Item>
+            ))}
           </Nav>
         </Container>
         <MobileMenu mobileMenuActive={this.state.showMobileMenu} />
