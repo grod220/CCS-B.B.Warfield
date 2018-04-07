@@ -9,6 +9,7 @@ const NavToggle = styled.button`
   left: calc((-1 *(100vw - (100%)) / 2) + 10px);
   cursor: pointer;
   display: none;
+  user-select: none;
 
   @media (max-width: 46.5625rem) {
     display: block;

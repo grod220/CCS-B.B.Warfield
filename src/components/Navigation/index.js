@@ -73,7 +73,7 @@ const Nav = styled.ul`
     margin-top: ${props => (props.mobileMenuActive ? "4vh" : "-300vh")};
     margin-left: ${props => (props.mobileMenuActive ? "" : "-300vw")};
     font-size: 1.875rem;
-    line-height: 14vh;
+    line-height: 10vh;
   }
 `;
 
@@ -97,6 +97,7 @@ const MobileMenu = styled.div`
   height: 100%;
   background-color: #212121;
   position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
