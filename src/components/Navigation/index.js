@@ -86,9 +86,8 @@ const Item = styled.li`
     margin-left: 0;
     margin-top: ${props => (props.mobileMenuActive ? 0 : '-1.25rem')};
     opacity: ${props => (props.mobileMenuActive ? 1 : 0)};
-    transition: opacity 2s ease, margin .5s ease;
-    transition-delay: ${props => props.delay + "ms"};
-    animation: fadein 2s forwards;
+    transition: ${props => props.mobileMenuActive ? "opacity 2s ease, margin .5s ease" : ""};
+    transition-delay: ${props => props.mobileMenuActive ? props.delay + "ms" : ""};
   }
 `;
 
