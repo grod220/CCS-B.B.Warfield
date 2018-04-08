@@ -22,17 +22,17 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: "Calvary Stockholm",
         short_name: "Calvary",
         start_url: "/",
-        background_color: "#303030",
-        theme_color: "#303030",
+        background_color: "#212121",
+        theme_color: "#212121",
         display: "minimal-ui",
         icon: "src/images/cross-favicon.png"
       },
-    },
-    "gatsby-plugin-offline"
+      "gatsby-plugin-offline"
+    }
   ]
 };
