@@ -20,7 +20,7 @@ const ParallaxMobileFix = styled(Parallax)`
 `;
 
 const WithBackground = styled.div`
-  background: url(${HeroImg});
+  background: url('https://pbs.twimg.com/profile_images/839928218710855680/B6JS6Aip_400x400.jpg');
   width: 100vw;
   height: 100vh;
   min-height: 33.75rem;

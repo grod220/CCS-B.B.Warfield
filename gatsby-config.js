@@ -20,6 +20,19 @@ module.exports = {
         name: "img",
         path: `${__dirname}/src/images/`
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Calvary Stockholm",
+        short_name: "Calvary",
+        start_url: "/",
+        background_color: "#303030",
+        theme_color: "#303030",
+        display: "minimal-ui",
+        icon: "src/images/cross-favicon.png"
+      },
+    },
+    "gatsby-plugin-offline"
   ]
 };
