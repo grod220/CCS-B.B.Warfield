@@ -32,7 +32,7 @@ module.exports = {
         display: "minimal-ui",
         icon: "src/images/cross-favicon.png"
       },
-      "gatsby-plugin-offline"
-    }
+    },
+    "gatsby-plugin-offline"
   ]
 };
