@@ -2,12 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import HeroImg from "../../images/hero-night.jpg";
 import { Parallax } from "react-scroll-parallax";
+import { isMobile } from "react-device-detect";
 
 const Container = styled.div`
   /* height: 100vh; */
   min-height: 33.75rem;
   overflow: hidden;
   position: relative;
+`;
+
+const ParallaxMobileFix = styled(Parallax)`
+  @media (max-width: 46.5625rem) {
+    width: 72vw;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 
 const WithBackground = styled.div`
@@ -59,8 +68,8 @@ class HeaderBlock extends React.Component {
     const { pretext, missionStatement } = this.props;
     return (
       <Container>
-        <Parallax offsetYMin={-50} offsetYMax={50} slowerScrollRate>
-          <WithBackground id="hero-img" />
+        <Parallax offsetYMin={-50} offsetYMax={50} slowerScrollRate disabled={isMobile}>
+          <WithBackground />
         </Parallax>
         <MissionBlock>
           <PreText>{pretext}</PreText>
