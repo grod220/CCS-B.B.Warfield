@@ -26,7 +26,7 @@ const Bar = styled.span`
   display: block;
   transform: rotate(0deg);
   transition: 0.2s ease all;
-
+  will-change: transform;
   border-radius: 0.0625rem;
   height: 0.25rem;
   width: 2.1875rem;
@@ -46,8 +46,8 @@ const BottBar = Bar.extend`
   transform-origin: ${props => (props.rotate ? "17% 14%" : "50% 50% 0")};
 `;
 
-const Hamburger = ({ mobileMenuActive, triggerFunc }) => (
-  <NavToggle show={mobileMenuActive} onClick={triggerFunc}>
+const Hamburger = ({ triggerFunc }) => (
+  <NavToggle onClick={triggerFunc}>
     <TopBar rotate={mobileMenuActive} />
     <MidBar hide={mobileMenuActive} />
     <BottBar rotate={mobileMenuActive} />
