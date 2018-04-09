@@ -123,6 +123,12 @@ class Navigation extends React.Component {
     this.setState(prevState => ({
       showMobileMenu: status !== undefined ? status : !prevState.showMobileMenu
     }));
+  
+  staticTest = () => {
+    this.setState(prevState => ({
+      showMobileMenu: !prevState.showMobileMenu
+    }));
+  }
 
   render() {
     return (
@@ -131,7 +137,7 @@ class Navigation extends React.Component {
           <BrandName>
             <Hamburger
               mobileMenuActive={this.state.showMobileMenu}
-              triggerFunc={this.toggleMobileMenu()}
+              triggerFunc={this.staticTest}
             />
             <Link to="/" onClick={this.toggleMobileMenu(false)}>
               Calvary Stockholm
