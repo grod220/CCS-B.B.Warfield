@@ -26,7 +26,6 @@ const Bar = styled.span`
   display: block;
   transform: rotate(0deg);
   transition: 0.2s ease all;
-  will-change: transform;
   border-radius: 0.0625rem;
   height: 0.25rem;
   width: 2.1875rem;
