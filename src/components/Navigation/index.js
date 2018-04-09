@@ -131,7 +131,7 @@ class Navigation extends React.Component {
           <BrandName>
             <Hamburger
               mobileMenuActive={this.state.showMobileMenu}
-              onClick={this.toggleMobileMenu}
+              triggerFunc={this.toggleMobileMenu()}
             />
             <Link to="/" onClick={this.toggleMobileMenu(false)}>
               Calvary Stockholm

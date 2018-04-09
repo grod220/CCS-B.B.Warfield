@@ -46,8 +46,8 @@ const BottBar = Bar.extend`
   transform-origin: ${props => (props.rotate ? "17% 14%" : "50% 50% 0")};
 `;
 
-const Hamburger = ({ mobileMenuActive }) => (
-  <NavToggle>
+const Hamburger = ({ mobileMenuActive, triggerFunc }) => (
+  <NavToggle onClick={triggerFunc}>
     <TopBar rotate={mobileMenuActive} />
     <MidBar hide={mobileMenuActive} />
     <BottBar rotate={mobileMenuActive} />
