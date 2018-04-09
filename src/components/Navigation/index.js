@@ -84,10 +84,12 @@ const Item = styled.li`
   @media (max-width: 46.5625rem) {
     display: block;
     margin-left: 0;
-    margin-top: ${props => (props.mobileMenuActive ? 0 : '-1.25rem')};
+    margin-top: ${props => (props.mobileMenuActive ? 0 : "-1.25rem")};
     opacity: ${props => (props.mobileMenuActive ? 1 : 0)};
-    transition: ${props => props.mobileMenuActive ? "opacity 2s ease, margin .5s ease" : ""};
-    transition-delay: ${props => props.mobileMenuActive ? props.delay + "ms" : ""};
+    transition: ${props =>
+      props.mobileMenuActive ? "opacity 2s ease, margin .5s ease" : ""};
+    transition-delay: ${props =>
+      props.mobileMenuActive ? props.delay + "ms" : ""};
   }
 `;
 
@@ -127,7 +129,10 @@ class Navigation extends React.Component {
       <div>
         <Container>
           <BrandName>
-            <Hamburger triggerFunc={this.toggleMobileMenu()} />
+            <Hamburger
+              mobileMenuActive={this.state.showMobileMenu}
+              onClick={this.toggleMobileMenu}
+            />
             <Link to="/" onClick={this.toggleMobileMenu(false)}>
               Calvary Stockholm
             </Link>

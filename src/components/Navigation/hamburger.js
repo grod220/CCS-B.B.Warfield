@@ -6,10 +6,10 @@ const NavToggle = styled.button`
   background: transparent;
   border: 1px solid transparent;
   top: calc(50% - (0.75rem));
-  left: calc((-1 *(100vw - (100%)) / 2) + 10px);
+  left: calc((-1 * (100vw - (100%)) / 2) + 10px);
   cursor: pointer;
   display: none;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   @media (max-width: 46.5625rem) {
     display: block;
@@ -46,8 +46,8 @@ const BottBar = Bar.extend`
   transform-origin: ${props => (props.rotate ? "17% 14%" : "50% 50% 0")};
 `;
 
-const Hamburger = ({ triggerFunc }) => (
-  <NavToggle onClick={triggerFunc}>
+const Hamburger = ({ mobileMenuActive }) => (
+  <NavToggle>
     <TopBar rotate={mobileMenuActive} />
     <MidBar hide={mobileMenuActive} />
     <BottBar rotate={mobileMenuActive} />
