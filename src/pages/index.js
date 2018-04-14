@@ -3,8 +3,9 @@ import Link from "gatsby-link";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 
-import HeaderBlock from "../components/Homepage/headerBlock";
-import ServiceTimes from "../components/Homepage/serviceTimes";
+import HeaderBlock from "../components/homepage/headerBlock";
+import ServiceTimes from "../components/homepage/serviceTimes";
+import WhiteContentBlock from "../components/shared/whiteContentBlock";
 
 const IndexPage = ({ data: { contentYaml } }) => (
   <div>
@@ -19,7 +20,9 @@ const IndexPage = ({ data: { contentYaml } }) => (
       missionStatement={contentYaml.mission.mission_statement}
       pretext={contentYaml.mission.pretext}
     />
-    <ServiceTimes serviceTimes={contentYaml.service_times} />
+    <WhiteContentBlock title={"Service Times"}>
+      <ServiceTimes serviceTimes={contentYaml.service_times} />
+    </WhiteContentBlock>
   </div>
 );
 
