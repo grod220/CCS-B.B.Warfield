@@ -5,7 +5,6 @@ import { Parallax } from "react-scroll-parallax";
 import { isMobile } from "react-device-detect";
 
 const Container = styled.div`
-  /* height: 100vh; */
   min-height: 33.75rem;
   overflow: hidden;
   position: relative;
@@ -36,6 +35,20 @@ const MissionBlock = styled.div`
   margin: 0 auto;
   left: 0;
   right: 0;
+
+  @media (max-width: 1328px) {
+    width: 95vw;
+  }
+
+  @media (max-width: 745px) {
+    top: 45%;
+    bottom: unset;
+    text-align: center;
+  }
+
+  @media (max-width: 414px) {
+    width: 90vw;
+  }
 `;
 
 const PreText = styled.div`
@@ -53,6 +66,12 @@ const Statement = styled.div`
   font-weight: 600;
   letter-spacing: -0.1406rem;
   text-shadow: 0.25rem 0.25rem 0rem rgba(0, 0, 0, 0.4);
+
+  @media (max-width: 83rem) {
+    /* Max/min font size :: reference formula: https://css-tricks.com/snippets/css/fluid-typography/ */
+    font-size: calc(43px + 35 * ((100vw - 320px) / 1000));
+    line-height: calc(1.1em + 0.5vw);
+  }
 `;
 
 class HeaderBlock extends React.Component {
@@ -68,7 +87,12 @@ class HeaderBlock extends React.Component {
     const { pretext, missionStatement } = this.props;
     return (
       <Container>
-        <Parallax offsetYMin={-50} offsetYMax={50} slowerScrollRate disabled={isMobile}>
+        <Parallax
+          offsetYMin={-50}
+          offsetYMax={50}
+          slowerScrollRate
+          disabled={isMobile}
+        >
           <WithBackground />
         </Parallax>
         <MissionBlock>
