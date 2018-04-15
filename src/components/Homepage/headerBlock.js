@@ -36,17 +36,17 @@ const MissionBlock = styled.div`
   left: 0;
   right: 0;
 
-  @media (max-width: 1328px) {
+  @media (max-width: 83rem) {
     width: 95vw;
   }
 
-  @media (max-width: 745px) {
+  @media (max-width: 46.5625rem) {
     top: 45%;
     bottom: unset;
     text-align: center;
   }
 
-  @media (max-width: 414px) {
+  @media (max-width: 25.875rem) {
     width: 90vw;
   }
 `;
@@ -69,7 +69,7 @@ const Statement = styled.div`
 
   @media (max-width: 83rem) {
     /* Max/min font size :: reference formula: https://css-tricks.com/snippets/css/fluid-typography/ */
-    font-size: calc(43px + 35 * ((100vw - 320px) / 1000));
+    font-size: calc(2.6875rem + 35 * ((100vw - 20rem) / 1000));
     line-height: calc(1.1em + 0.5vw);
   }
 `;

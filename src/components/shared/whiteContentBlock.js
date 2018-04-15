@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import "typeface-crimson-text";
 
 const OuterContainer = styled.div`
   display: flex;
@@ -7,15 +8,25 @@ const OuterContainer = styled.div`
 `;
 
 const InnerContainer = styled.div`
-    width: 1000px;
+  width: 78.75rem;
+  padding: 70px 0;
+  font-family: Crimson Text, georgia, serif;
+  font-size: 20px;
+  color: #4f4f4f;
+  line-height: 30px;
+
+  @media (max-width: 83rem) {
+    width: 95vw;
+  }
 `;
 
 const Title = styled.h1`
   font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.2813rem;
-  font-size: 1.125rem;
+  letter-spacing: 1px;
+  font-size: 26px;
+  text-align: center;
   color: #848484;
 `;
 

@@ -1,54 +1,45 @@
 import React from "react";
 import Link from "gatsby-link";
-import styled from "styled-components"
+import styled from "styled-components";
 
 const Container = styled.div`
-  width: 100vw;
-  margin: 2.5rem auto 0;
-  left: 0;
-  right: 0;
+  text-align: center;
 `;
 
-const ServiceTimes = ({serviceTimes}) => (
+const ServiceTime = styled.h2`
+  font-family: Open Sans, Arial, Helvetica, sans-serif;
+`;
+
+const MapsLink = styled.span`
+  color: #848484;
+  font-weight: 500;
+  white-space: nowrap;
+  
+  a {
+    color: #848484;
+  }
+`;
+
+const ServiceTimes = ({ serviceTimes }) => (
   <Container>
-    <h1>Hi people</h1>
-    <h3>Service times: {serviceTimes}</h3>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-    <h3>Service times: {serviceTimes}</h3>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <h3>Service times: {serviceTimes}</h3>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <h3>Service times: {serviceTimes}</h3>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <h3>Service times: {serviceTimes}</h3>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <h3>Service times: {serviceTimes}</h3>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <h3>Service times: {serviceTimes}</h3>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <h3>Service times: {serviceTimes}</h3>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <h3>Service times: {serviceTimes}</h3>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <h3>Service times: {serviceTimes}</h3>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <h3>Service times: {serviceTimes}</h3>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <h3>Service times: {serviceTimes}</h3>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <ServiceTime>
+      Sundays @ 3pm, Korskyrkan’s Café{" "}
+      <MapsLink>
+        (<a
+          href="https://goo.gl/maps/Su7ffMHUFaS2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          maps link
+        </a>)
+      </MapsLink>
+    </ServiceTime>
+    <p>
+      The address is Birger Jarlsgatan 66B. It's only 5 min walk away from
+      Rådmansgatan subway station (green line). Above is a picture of the
+      outside. It’s not the main entrance, but the door to its left (look for
+      66B). And feel free to call if you get lost!
+    </p>
   </Container>
 );
 

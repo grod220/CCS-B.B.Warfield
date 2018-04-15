@@ -6,6 +6,7 @@ import Helmet from "react-helmet";
 import HeaderBlock from "../components/homepage/headerBlock";
 import ServiceTimes from "../components/homepage/serviceTimes";
 import WhiteContentBlock from "../components/shared/whiteContentBlock";
+import SummaryBlock from "../components/homepage/summaryBlock";
 
 const IndexPage = ({ data: { contentYaml } }) => (
   <div>
@@ -23,6 +24,7 @@ const IndexPage = ({ data: { contentYaml } }) => (
     <WhiteContentBlock title={"Service Times"}>
       <ServiceTimes serviceTimes={contentYaml.service_times} />
     </WhiteContentBlock>
+    <SummaryBlock />
   </div>
 );
 
