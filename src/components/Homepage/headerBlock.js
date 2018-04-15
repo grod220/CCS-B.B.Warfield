@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import HeroImg from "../../images/hero-night.jpg";
+import HeroImg from "../../images/homepage-hero-night.jpg";
 import { Parallax } from "react-scroll-parallax";
 import { isMobile } from "react-device-detect";
 
@@ -8,6 +8,7 @@ const Container = styled.div`
   min-height: 33.75rem;
   overflow: hidden;
   position: relative;
+  background-color: #24242c;
 `;
 
 const ParallaxMobileFix = styled(Parallax)`

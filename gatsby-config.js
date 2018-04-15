@@ -30,7 +30,7 @@ module.exports = {
         background_color: "#212121",
         theme_color: "#212121",
         display: "minimal-ui",
-        icon: "src/images/cross-favicon.png"
+        icon: "src/images/favicon-cross.png"
       },
     },
     "gatsby-plugin-offline"

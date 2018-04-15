@@ -5,6 +5,9 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import Navigation from "../components/navigation";
 import Footer from "../components/footer";
 import "./index.css";
+import "typeface-open-sans";
+import "typeface-open-sans-condensed";
+import "typeface-crimson-text";
 
 import styled from "styled-components";
 const Container = styled.div`

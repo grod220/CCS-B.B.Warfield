@@ -3,8 +3,6 @@ import Link from "gatsby-link";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import Hamburger from "./hamburger";
-import "typeface-open-sans";
-import "typeface-open-sans-condensed";
 
 const Container = styled.div`
   position: absolute;
