@@ -7,6 +7,10 @@ import HeaderBlock from "../components/homepage/headerBlock";
 import ServiceTimes from "../components/homepage/serviceTimes";
 import WhiteContentBlock from "../components/shared/whiteContentBlock";
 import SummaryBlock from "../components/homepage/summaryBlock";
+import CalendarWidget from "../components/homepage/calendarWidget";
+import CoreValues from "../components/homepage/coreValues";
+import StayInTouch from "../components/homepage/stayInTouch";
+import PreFooterImg from "../components/homepage/preFooterImg";
 
 const IndexPage = ({ data: { contentYaml } }) => (
   <div>
@@ -25,6 +29,10 @@ const IndexPage = ({ data: { contentYaml } }) => (
       <ServiceTimes serviceTimes={contentYaml.service_times} />
     </WhiteContentBlock>
     <SummaryBlock />
+    <CalendarWidget />
+    <CoreValues />
+    <StayInTouch />
+    <PreFooterImg />
   </div>
 );
 
