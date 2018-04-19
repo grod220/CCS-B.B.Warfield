@@ -31,7 +31,9 @@ const IndexPage = ({ data: { contentYaml } }) => (
     <SummaryBlock />
     <CalendarWidget />
     <CoreValues />
-    <StayInTouch />
+    <WhiteContentBlock title={"Stay in touch"}>
+      <StayInTouch />
+    </WhiteContentBlock>
     <PreFooterImg />
   </div>
 );
