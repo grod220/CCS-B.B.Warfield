@@ -8,3 +8,5 @@ public/
 yarn-error.log
 .vscode
 
+# Lambda built files
+lambda/build/
