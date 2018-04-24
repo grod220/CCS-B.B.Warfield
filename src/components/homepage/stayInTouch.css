@@ -1,0 +1,12 @@
+.react-toast-success {
+  background-color: #41af64;
+}
+
+.react-toast-error {
+  background-color: #db5151;
+}
+
+.react-toast-common {
+  font-family: Open Sans, Arial, Helvetica, sans-serif;
+  width: 18.75rem;
+}
