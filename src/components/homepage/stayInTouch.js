@@ -48,24 +48,27 @@ const SubmitButton = styled.button`
   }
 `;
 
-const storeEmail = async () => {
+const storeEmail = () => {
   const inputEl = document.querySelector("input");
   if (!inputEl.validity.valid) {
     inputEl.style.border = "2px solid #e88c8c";
     inputEl.style.boxShadow = "0px 0px 4px #e88c8c";
   } else {
-    const response = await postEmail(inputEl.value);
-    console.log(response);
-    if (response.ok) {
-      toast.success("👍 Email subscribed!", {
-        className: "react-toast-success react-toast-common"
-      });
-      inputEl.value = "ᕕ( ᐛ )ᕗ";
-    } else {
-      toast.error("💥 There was an error.", {
-        className: "react-toast-error react-toast-common"
-      });
-    }
+    postEmail(inputEl.value)
+    .then(response => {
+      console.log(response);
+      if (response.ok) {
+        toast.success("👍 Email subscribed!", {
+          className: "react-toast-success react-toast-common"
+        });
+        inputEl.value = "ᕕ( ᐛ )ᕗ";
+      } else {
+        toast.error("💥 There was an error.", {
+          className: "react-toast-error react-toast-common"
+        });
+      }
+    })
+    .catch(err => console.log(err))
   }
 };
 
