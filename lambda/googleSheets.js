@@ -2,7 +2,8 @@
 
 const sampleFunc = () => {
   return new Promise((resolve, reject) => {
-    reject("A simple no.");
+    resolve("yay!");
+    // reject("A simple no.");
   });
 };
 
@@ -11,6 +12,6 @@ exports.handler = async function(event, context, callback) {
     const data = await sampleFunc();
     return { statusCode: 200, body: data };
   } catch (err) {
-    throw new Error(err);
+    return { statusCode: 500, body: err };
   }
 };
