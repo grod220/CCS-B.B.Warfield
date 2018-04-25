@@ -29,9 +29,11 @@ const addToCol = (sheets, range, emailAddress) => {
 };
 
 exports.handler = async function(event, context, callback) {
+
+
   callback(null, {
     statusCode: 200,
-    body: process.env.GOOGLE_SERVICE_ACCOUNT
+    body: JSON.stringify(process.env)
   });
   // return { statusCode: 200, body: process.env.GOOGLE_SERVICE_ACCOUNT }
   // try {
