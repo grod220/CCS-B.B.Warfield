@@ -58,7 +58,11 @@ const getButtonAttrs = submitStatus => {
 };
 
 const postEmail = email => {
-  return fetch("/.netlify/functions/googleSheets");
+  return fetch("/.netlify/functions/googleSheets", {
+    body: {"email": email},
+    headers: {'content-type': 'application/json'},
+    method: 'POST',
+  });
 };
 
 class StayInTouch extends React.Component {
