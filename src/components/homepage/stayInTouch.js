@@ -59,7 +59,7 @@ const getButtonAttrs = submitStatus => {
 
 const postEmail = email => {
   return fetch("/.netlify/functions/googleSheets", {
-    body: {"email": email},
+    body: JSON.stringify({"email": email}),
     headers: {'content-type': 'application/json'},
     method: 'POST',
   });
