@@ -82,10 +82,7 @@ class StayInTouch extends React.Component {
 
   storeEmail = () => {
     if (this.state.submitStatus !== "ready") return;
-    if (
-      !this.state.input ||
-      !document.querySelector("input").validity.valid
-    ) {
+    if (!this.state.input || !document.querySelector("input").validity.valid) {
       this.setState({ inputStatus: "invalid" });
     } else {
       this.setState({ submitStatus: "pending" });
