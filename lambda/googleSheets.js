@@ -5,7 +5,7 @@ import { google } from "googleapis";
 const authorize = async base64Keys => {
   const client = await google.auth.getClient({
     credentials: JSON.parse(
-      Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT, "base64").toString(
+      Buffer.from(base64Keys, "base64").toString(
         "ascii"
       )
     ),
@@ -31,7 +31,7 @@ const addToCol = (sheets, range, emailAddress) => {
 // TO DO: get the post obj w/ email
 exports.handler = async function(event, context, callback) {
   try {
-    const sheets = await authorize(jwtKeysBase64);
+    const sheets = await authorize(process.env.GOOGLE_SERVICE_ACCOUNT);
     const res = await addToCol(
       sheets,
       "Sheet3!A1:C2",
