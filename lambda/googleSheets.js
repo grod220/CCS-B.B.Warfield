@@ -29,7 +29,11 @@ const addToCol = (sheets, range, emailAddress) => {
 };
 
 exports.handler = async function(event, context, callback) {
-  return { statusCode: 200, body: "TEST IF WORKING" }
+  callback(null, {
+    statusCode: 200,
+    body: process.env.GOOGLE_SERVICE_ACCOUNT
+  });
+  // return { statusCode: 200, body: process.env.GOOGLE_SERVICE_ACCOUNT }
   // try {
   //   const sheets = await authorize(process.env.GOOGLE_SERVICE_ACCOUNT);
   //   const res = await addToCol(
