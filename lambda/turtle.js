@@ -1,4 +1,4 @@
-const google = require("googleapis");
+var _ = require('lodash');
 
 exports.handler = async function(event, context, callback) {
   callback(null, {
