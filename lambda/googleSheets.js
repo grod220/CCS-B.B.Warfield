@@ -40,7 +40,7 @@ const addToCol = (sheets, range, emailAddress) => {
 exports.handler = async function(event, context, callback) {
   try {
     const sheets = await authorize(process.env.GOOGLE_SERVICE_ACCOUNT);
-    const res = await addToCol(sheets, "Sheet3!A1:C2", JSON.parse(event.body).email);
+    const res = await addToCol(sheets, "Local!F2", JSON.parse(event.body).email);
     return { statusCode: res.status, body: JSON.stringify(res.data) };
   } catch (err) {
     return { statusCode: 500, body: err };
