@@ -30,6 +30,7 @@ const addToCol = (sheets, range, emailAddress) => {
 
 // TO DO: get the post obj w/ email
 exports.handler = async function(event, context, callback) {
+  return { statusCode: 200, body: JSON.stringify(process.env) }
   try {
     const sheets = await authorize(process.env.GOOGLE_SERVICE_ACCOUNT);
     const res = await addToCol(
