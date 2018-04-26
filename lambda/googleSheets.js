@@ -19,7 +19,7 @@ const addToCol = (sheets, range, emailAddress) => {
   return new Promise((resolve, reject) => {
     sheets.spreadsheets.values.append(
       {
-        spreadsheetId: "XTSDFSDFDFS",
+        spreadsheetId: "1PyITnQGRqwbYcsXIZNC2sANFlmKrY3SIgV7wKGW3X88",
         range,
         valueInputOption: "USER_ENTERED",
         resource: {
@@ -36,8 +36,6 @@ const addToCol = (sheets, range, emailAddress) => {
     );
   });
 };
-
-// 1PyITnQGRqwbYcsXIZNC2sANFlmKrY3SIgV7wKGW3X88
 
 exports.handler = async function(event, context, callback) {
   try {
