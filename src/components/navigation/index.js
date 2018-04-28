@@ -97,7 +97,6 @@ const MobileMenu = styled.div`
   background-color: #212121;
   position: absolute;
   z-index: ${props => (props.mobileMenuActive ? 99 : -99)};
-  transition: all 0.25s ease;
   opacity: ${props => (props.mobileMenuActive ? 0.98 : 0)};
 `;
 

@@ -11,14 +11,6 @@ const Container = styled.div`
   background-color: #24242c;
 `;
 
-const ParallaxMobileFix = styled(Parallax)`
-  @media (max-width: 46.5625rem) {
-    width: 72vw;
-    align-items: center;
-    flex-direction: column;
-  }
-`;
-
 const WithBackground = styled.div`
   background: url('${HeroImg}');
   width: 100vw;
@@ -75,7 +67,7 @@ const Statement = styled.div`
   }
 `;
 
-class HeaderBlock extends React.Component {
+class HomeHeader extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -105,4 +97,4 @@ class HeaderBlock extends React.Component {
   }
 }
 
-export default HeaderBlock;
+export default HomeHeader;

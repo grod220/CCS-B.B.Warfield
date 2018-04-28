@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 
-import HeaderBlock from "../components/homepage/headerBlock";
+import HomeHeader from "../components/homepage/homeHeader";
 import ServiceTimes from "../components/homepage/serviceTimes";
 import WhiteContentBlock from "../components/shared/whiteContentBlock";
 import SummaryBlock from "../components/homepage/summaryBlock";
@@ -15,13 +15,13 @@ import PreFooterImg from "../components/homepage/preFooterImg";
 const IndexPage = ({ data: { contentYaml } }) => (
   <div>
     <Helmet
-      title="You've made it to the homepage"
+      title="Calvary Stockholm :: Building God's Kingdom"
       meta={[
-        { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" }
+        { name: "description", content: "We are an english-speaking church in the heart of Stockholm, brought and bound together by one person: Jesus. Come and see that the Lord is good." },
+        { name: "keywords", content: "christian, church, god, jesus, stockholm, english" }
       ]}
     />
-    <HeaderBlock
+    <HomeHeader
       missionStatement={contentYaml.mission.mission_statement}
       pretext={contentYaml.mission.pretext}
     />
