@@ -1,8 +1,7 @@
 import React from "react";
-import Link from "gatsby-link";
 import Helmet from "react-helmet";
 
-import Hero from "../images/love-your-neighbor.jpg"
+import Hero from "../images/who-we-are-hat.jpg"
 import HeaderBlock from "../components/shared/headerBlock"
 import TheBeginning from "../components/whoWeAre/theBeginning"
 import OurMission from "../components/whoWeAre/ourMission"

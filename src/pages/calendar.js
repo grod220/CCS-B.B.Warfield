@@ -1,8 +1,7 @@
 import React from "react";
-import Link from "gatsby-link";
 import Helmet from "react-helmet";
 
-import Hero from "../images/high-res/hero-day-high-res.jpg"
+import Hero from "../images/calendar-group-pic.jpg"
 import HeaderBlock from "../components/shared/headerBlock"
 import CalHighlight from "../components/calendar/calHighlight" 
 import CalWidget from "../components/calendar/calWidget" 

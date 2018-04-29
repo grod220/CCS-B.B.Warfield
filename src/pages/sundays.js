@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "gatsby-link";
 import Helmet from "react-helmet";
 
 import HeaderBlock from "../components/shared/headerBlock";
@@ -10,7 +9,7 @@ import WhatToExpect from "../components/sundays/whatToExpect";
 import ListenToAService from "../components/sundays/listenToAService";
 import MoreQuestions from "../components/sundays/moreQuestions";
 
-import Hero from "../images/homepage-bible-open.jpg";
+import Hero from "../images/sundays-joe.jpg";
 
 const Sundays = () => (
   <div>
