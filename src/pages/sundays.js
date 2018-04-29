@@ -2,15 +2,15 @@ import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
 
-import HeaderBlock from "../components/shared/headerBlock"
-import SubheadHighlight from "../components/sundays/subheadHighlight"
-import ServiceTimeAndLocation from "../components/sundays/serviceTimeAndLocation"
-import HebrewsBlock from "../components/sundays/hebrewsBlock"
-import WhatToExpect from "../components/sundays/whatToExpect"
-import ListenToAService from "../components/sundays/listenToAService"
-import MoreQuestions from "../components/sundays/moreQuestions"
+import HeaderBlock from "../components/shared/headerBlock";
+import GatheringHighlight from "../components/sundays/gatheringHighlight";
+import ServiceTimeAndLocation from "../components/sundays/serviceTimeAndLocation";
+import HebrewsBlock from "../components/sundays/hebrewsBlock";
+import WhatToExpect from "../components/sundays/whatToExpect";
+import ListenToAService from "../components/sundays/listenToAService";
+import MoreQuestions from "../components/sundays/moreQuestions";
 
-import Hero from "../images/homepage-bible-open.jpg"
+import Hero from "../images/homepage-bible-open.jpg";
 
 const Sundays = () => (
   <div>
@@ -23,12 +23,13 @@ const Sundays = () => (
         }
       ]}
     />
-    <HeaderBlock img={Hero} titleText="Sunday Gatherings" offsetMin={-40} offsetMax={0} />
-    <SubheadHighlight />
-    <SubheadHighlight />
-    <SubheadHighlight />
-    <SubheadHighlight />
-    <SubheadHighlight />
+    <HeaderBlock
+      img={Hero}
+      titleText="Sunday Gatherings"
+      offsetMin={-40}
+      offsetMax={0}
+    />
+    <GatheringHighlight />
     <ServiceTimeAndLocation />
     <HebrewsBlock />
     <WhatToExpect />

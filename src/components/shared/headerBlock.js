@@ -14,7 +14,7 @@ const Container = styled.div`
 const BackgroundImg = styled.div`
   background: url('${props => props.image}');
   width: 100vw;
-  height: 35rem;
+  height: 39rem;
   background-size: cover;
   background-position: center;
 `;

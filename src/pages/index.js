@@ -8,8 +8,8 @@ import ServiceTimes from "../components/homepage/serviceTimes";
 import WhiteContentBlock from "../components/shared/whiteContentBlock";
 import SummaryBlock from "../components/homepage/summaryBlock";
 import CalendarWidget from "../components/homepage/calendarWidget";
-import CoreValues from "../components/homepage/coreValues";
-import StayInTouch from "../components/homepage/stayInTouch";
+import CoreValues from "../components/shared/coreValues";
+import StayInTouch from "../components/shared/stayInTouch";
 import PreFooterImg from "../components/homepage/preFooterImg";
 
 const IndexPage = ({ data: { contentYaml } }) => (
