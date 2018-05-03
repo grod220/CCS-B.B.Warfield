@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import "./stayInTouch.css";
+import WhiteContentBlock from "../shared/whiteContentBlock";
 
 const Container = styled.div`
   text-align: center;
@@ -59,9 +60,9 @@ const getButtonAttrs = submitStatus => {
 
 const postEmail = email => {
   return fetch("/.netlify/functions/googleSheets", {
-    body: JSON.stringify({"email": email}),
-    headers: {'content-type': 'application/json'},
-    method: 'POST',
+    body: JSON.stringify({ email: email }),
+    headers: { "content-type": "application/json" },
+    method: "POST"
   });
 };
 
@@ -113,40 +114,42 @@ class StayInTouch extends React.Component {
 
   render() {
     return (
-      <Container>
-        <p>
-          Enter your email to signup for our regular newsletter. You’ll recieve
-          updates like church announcements, bible studies, upcoming events, and
-          fun things happening at Calvary Stockholm.
-        </p>
-        <ActionSection>
-          <InputBox
-            type="email"
-            onFocus={this.clearBox}
-            placeholder={this.state.inputPlaceholder}
-            value={this.state.input}
-            onChange={this.handleTyping}
-            status={this.state.inputStatus}
+      <WhiteContentBlock title="Stay in touch">
+        <Container>
+          <p>
+            Enter your email to signup for our regular newsletter. You’ll
+            recieve updates like church announcements, bible studies, upcoming
+            events, and fun things happening at Calvary Stockholm.
+          </p>
+          <ActionSection>
+            <InputBox
+              type="email"
+              onFocus={this.clearBox}
+              placeholder={this.state.inputPlaceholder}
+              value={this.state.input}
+              onChange={this.handleTyping}
+              status={this.state.inputStatus}
+            />
+            <SubmitButton
+              onClick={this.storeEmail}
+              submitStatus={this.state.submitStatus}
+            >
+              Submit
+            </SubmitButton>
+          </ActionSection>
+          <ToastContainer
+            position="top-right"
+            autoClose={3000}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnVisibilityChange
+            draggable
+            pauseOnHover
           />
-          <SubmitButton
-            onClick={this.storeEmail}
-            submitStatus={this.state.submitStatus}
-          >
-            Submit
-          </SubmitButton>
-        </ActionSection>
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnVisibilityChange
-          draggable
-          pauseOnHover
-        />
-      </Container>
+        </Container>
+      </WhiteContentBlock>
     );
   }
 }

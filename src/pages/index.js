@@ -4,7 +4,6 @@ import Helmet from "react-helmet";
 
 import HomeHeader from "../components/homepage/homeHeader";
 import ServiceTimes from "../components/homepage/serviceTimes";
-import WhiteContentBlock from "../components/shared/whiteContentBlock";
 import SummaryBlock from "../components/homepage/summaryBlock";
 import CalendarWidget from "../components/homepage/calendarWidget";
 import CoreValues from "../components/shared/coreValues";
@@ -16,23 +15,26 @@ const IndexPage = ({ data: { contentYaml } }) => (
     <Helmet
       title="Calvary Stockholm :: Building God's Kingdom"
       meta={[
-        { name: "description", content: "We are an english-speaking church in the heart of Stockholm, brought and bound together by one person: Jesus. Come and see that the Lord is good." },
-        { name: "keywords", content: "christian, church, god, jesus, stockholm, english" }
+        {
+          name: "description",
+          content:
+            "We are an english-speaking church in the heart of Stockholm, brought and bound together by one person: Jesus. Come and see that the Lord is good."
+        },
+        {
+          name: "keywords",
+          content: "christian, church, god, jesus, stockholm, english"
+        }
       ]}
     />
     <HomeHeader
       missionStatement={contentYaml.mission.mission_statement}
       pretext={contentYaml.mission.pretext}
     />
-    <WhiteContentBlock title={"Service Times"}>
-      <ServiceTimes serviceTimes={contentYaml.service_times} />
-    </WhiteContentBlock>
+    <ServiceTimes serviceTimes={contentYaml.service_times} />
     <SummaryBlock />
     <CalendarWidget />
     <CoreValues />
-    <WhiteContentBlock title={"Stay in touch"}>
-      <StayInTouch />
-    </WhiteContentBlock>
+    <StayInTouch />
     <PreFooterImg />
   </div>
 );
