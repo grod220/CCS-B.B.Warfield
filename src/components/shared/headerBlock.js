@@ -32,12 +32,12 @@ const Title = styled.h1`
   margin: 17px 10px 0;
 `;
 
-const HeaderBlock = ({ img, titleText, offsetMin, offsetMax }) => (
+const HeaderBlock = ({ img, titleText }) => (
   <Container>
     <Title>{titleText}</Title>
     <Parallax
-      offsetYMin={offsetMin}
-      offsetYMax={offsetMax}
+      offsetYMin={-40}
+      offsetYMax={0}
       slowerScrollRate
       disabled={isMobile}
     >

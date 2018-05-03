@@ -20,7 +20,7 @@ const Giving = () => (
         }
       ]}
     />
-    <HeaderBlock img={Hero} titleText="Giving" offsetMin={-40} offsetMax={0} />
+    <HeaderBlock img={Hero} titleText="Giving" />
     <GivingHighlight />
     <AccountInfo />
     <SupportedMinistries />

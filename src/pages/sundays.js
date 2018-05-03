@@ -22,12 +22,7 @@ const Sundays = () => (
         }
       ]}
     />
-    <HeaderBlock
-      img={Hero}
-      titleText="Sunday Gatherings"
-      offsetMin={-40}
-      offsetMax={0}
-    />
+    <HeaderBlock img={Hero} titleText="Sunday Gatherings" />
     <GatheringHighlight />
     <ServiceTimeAndLocation />
     <HebrewsBlock />

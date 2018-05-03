@@ -11,12 +11,7 @@ const NotFoundPage = () => (
       title="Calvary Stockholm :: 404 not found!"
       meta={[{ name: "description", content: "Sorry! Page not found." }]}
     />
-    <HeaderBlock
-      img={Hero}
-      titleText="404 error"
-      offsetMin={-40}
-      offsetMax={0}
-    />
+    <HeaderBlock img={Hero} titleText="404 error" />
     <SubheadHighlight color="gray">
       Hmmm... Page not found. Now where could that be? 🤔
     </SubheadHighlight>

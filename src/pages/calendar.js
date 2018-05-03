@@ -20,7 +20,7 @@ const Calendar = () => (
         }
       ]}
     />
-    <HeaderBlock img={Hero} titleText="Upcoming Events" offsetMin={-40} offsetMax={0} />
+    <HeaderBlock img={Hero} titleText="Upcoming Events" />
     <CalHighlight />
     <CalWidget />
     <WhiteContentBlock title={"Stay in touch"}>

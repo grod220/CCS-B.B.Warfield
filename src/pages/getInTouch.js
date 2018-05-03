@@ -18,12 +18,7 @@ const GetInTouch = () => (
         }
       ]}
     />
-    <HeaderBlock
-      img={Hero}
-      titleText="Get in touch"
-      offsetMin={-40}
-      offsetMax={0}
-    />
+    <HeaderBlock img={Hero} titleText="Get in touch" />
     <GITHighlight />
     <QuickHello />
     <ServiceTimesRedirect />
