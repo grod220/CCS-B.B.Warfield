@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
-  width: 100vw;
-  height: 500px;
-  background-color: gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+import FeaturedWithBackground from "../shared/featureWithBackground";
+import Mountains from "../../images/who-we-are-mountains.jpg"
 
-const OurMission = () => <Container>HERE ARE OurMission</Container>;
+const OurMission = () => (
+  <FeaturedWithBackground title="Our mission" image={Mountains}>
+    Black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce
+    lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut
+    pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.
+  </FeaturedWithBackground>
+);
 
 export default OurMission;

@@ -42,9 +42,24 @@ const HighlightText = styled.div`
   }
 `;
 
-const FeatureWithBackground = ({ children, image, customHeight, disablePL }) => (
+const Title = styled.h1`
+  font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  font-size: 1.625rem;
+  text-align: center;
+  color: #848484;
+  font-style: normal;
+  color: white;
+`;
+
+const FeatureWithBackground = ({ children, image, customHeight, disablePL, title }) => (
   <Container customHeight={customHeight}>
-    <HighlightText>{children}</HighlightText>
+    <HighlightText>
+      { title ? <Title>{title}</Title> : "" }
+      {children}
+    </HighlightText>
     <Parallax
       offsetYMin={-40}
       offsetYMax={40}
