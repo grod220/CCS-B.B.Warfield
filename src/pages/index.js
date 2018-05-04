@@ -9,6 +9,7 @@ import CalendarWidget from "../components/homepage/calendarWidget";
 import CoreValues from "../components/shared/coreValues";
 import StayInTouch from "../components/shared/stayInTouch";
 import PreFooterImg from "../components/homepage/preFooterImg";
+import WhiteContentBlock from "../components/shared/whiteContentBlock";
 
 const IndexPage = ({ data: { contentYaml } }) => (
   <div>
@@ -34,7 +35,9 @@ const IndexPage = ({ data: { contentYaml } }) => (
     <SummaryBlock />
     <CalendarWidget />
     <CoreValues />
-    <StayInTouch />
+    <WhiteContentBlock title="Stay in touch">
+      <StayInTouch />
+    </WhiteContentBlock>
     <PreFooterImg />
   </div>
 );

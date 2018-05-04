@@ -6,8 +6,7 @@ import HeaderBlock from "../components/shared/headerBlock"
 import CalHighlight from "../components/calendar/calHighlight" 
 import CalWidget from "../components/calendar/calWidget" 
 import WhiteContentBlock from "../components/shared/whiteContentBlock"
-import StayInTouch from "../components/shared/stayInTouch"
-
+import StayInTouchAlt from "../components/calendar/stayInTouchAlt"
 
 const Calendar = () => (
   <div>
@@ -23,9 +22,7 @@ const Calendar = () => (
     <HeaderBlock img={Hero} titleText="Upcoming Events" />
     <CalHighlight />
     <CalWidget />
-    <WhiteContentBlock title={"Stay in touch"}>
-      <StayInTouch />
-    </WhiteContentBlock>
+    <StayInTouchAlt />
   </div>
 );
 

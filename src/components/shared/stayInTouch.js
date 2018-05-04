@@ -3,10 +3,14 @@ import styled from "styled-components";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import "./stayInTouch.css";
-import WhiteContentBlock from "../shared/whiteContentBlock";
 
 const Container = styled.div`
   text-align: center;
+  font-family: Crimson Text, georgia, serif;
+  font-size: 1.25rem;
+  color: ${props => props.white ? "white" : "#4f4f4f"};
+  line-height: 1.875rem;
+  font-style: normal;
 `;
 
 const ActionSection = styled.div`
@@ -38,6 +42,7 @@ const SubmitButton = styled.button`
   font-size: 18px;
   border: none;
   margin-left: 5px;
+  font-style: normal;
 
   &:hover {
     background-color: ${props => getButtonAttrs(props.submitStatus).hover};
@@ -114,42 +119,40 @@ class StayInTouch extends React.Component {
 
   render() {
     return (
-      <WhiteContentBlock title="Stay in touch">
-        <Container>
-          <p>
-            Enter your email to signup for our regular newsletter. You’ll
-            recieve updates like church announcements, bible studies, upcoming
-            events, and fun things happening at Calvary Stockholm.
-          </p>
-          <ActionSection>
-            <InputBox
-              type="email"
-              onFocus={this.clearBox}
-              placeholder={this.state.inputPlaceholder}
-              value={this.state.input}
-              onChange={this.handleTyping}
-              status={this.state.inputStatus}
-            />
-            <SubmitButton
-              onClick={this.storeEmail}
-              submitStatus={this.state.submitStatus}
-            >
-              Submit
-            </SubmitButton>
-          </ActionSection>
-          <ToastContainer
-            position="top-right"
-            autoClose={3000}
-            hideProgressBar
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnVisibilityChange
-            draggable
-            pauseOnHover
+      <Container white={this.props.white}>
+        <p>
+          Enter your email to signup for our regular newsletter. You’ll recieve
+          updates like church announcements, bible studies, upcoming events, and
+          fun things happening at Calvary Stockholm.
+        </p>
+        <ActionSection>
+          <InputBox
+            type="email"
+            onFocus={this.clearBox}
+            placeholder={this.state.inputPlaceholder}
+            value={this.state.input}
+            onChange={this.handleTyping}
+            status={this.state.inputStatus}
           />
-        </Container>
-      </WhiteContentBlock>
+          <SubmitButton
+            onClick={this.storeEmail}
+            submitStatus={this.state.submitStatus}
+          >
+            Submit
+          </SubmitButton>
+        </ActionSection>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnVisibilityChange
+          draggable
+          pauseOnHover
+        />
+      </Container>
     );
   }
 }

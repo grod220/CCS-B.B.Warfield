@@ -32,7 +32,7 @@ const Title = styled.h1`
 const WhiteContentBlock = ({ children, title }) => (
   <OuterContainer>
     <InnerContainer>
-      <Title>{title}</Title>
+      { title ? <Title>{title}</Title> : ""}
       {children}
     </InnerContainer>
   </OuterContainer>
