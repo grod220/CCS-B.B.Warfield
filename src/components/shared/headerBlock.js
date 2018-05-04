@@ -9,6 +9,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-color: #4a4a4a;
 `;
 
 const BackgroundImg = styled.div`

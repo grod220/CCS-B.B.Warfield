@@ -1,15 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
-  width: 100vw;
-  height: 500px;
-  background-color: gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+import FeaturedBlock from "../shared/featureWithBackground";
+import EscalatorPic from "../../images/giving-escalator.jpg";
+
+const TextStyling = styled.div`
+  font-style: normal;
+  font-size: 24px;
+  line-height: 22px;
 `;
 
-const SupportedMinistries = () => <Container>SupportedMinistries</Container>;
+const SupportedMinistries = () => (
+  <FeaturedBlock title="Ministries we support" image={EscalatorPic} customHeight="400px">
+    <TextStyling>
+      <p>Local ministry</p>
+      <p>Mission Org inc.</p>
+      <p>Homes for the Volks</p>
+      <p>????</p>
+    </TextStyling>
+  </FeaturedBlock>
+);
 
 export default SupportedMinistries;

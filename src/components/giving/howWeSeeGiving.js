@@ -1,15 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
-  width: 100vw;
-  height: 500px;
-  background-color: gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+import FeatureBlock from "../shared/featureWithBackground";
+import TreesPic from "../../images/giving-trees.jpg";
+
+const WhiteAnchor = styled.a`
+  color: white;
 `;
 
-const HowWeSeeGiving = () => <Container>HowWeSeeGiving</Container>;
+const Styling = styled.div`
+  letter-spacing: 1px;
+`;
+
+const HowWeSeeGiving = () => (
+  <FeatureBlock image={TreesPic} disablePL customHeight="330px">
+    <Styling>
+      Learn more about{" "}
+      <WhiteAnchor href="http://www.spotify.com" target="_blank">
+        we see giving →
+      </WhiteAnchor>
+    </Styling>
+  </FeatureBlock>
+);
 
 export default HowWeSeeGiving;
