@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 
 import Hero from "../images/get-in-touch-capp.jpg";
 import HeaderBlock from "../components/shared/headerBlock";
-import GITHighlight from "../components/getInTouch/gITHighlight";
+import GITHighlight from "../components/getInTouch/GITHighlight";
 import QuickHello from "../components/getInTouch/quickHello";
 import ServiceTimesRedirect from "../components/getInTouch/serviceTimesRedirect";
 
