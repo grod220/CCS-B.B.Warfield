@@ -22,13 +22,6 @@ const CustomStyle = styled.div`
   }
 `;
 
-const EnglishBold = styled.span`
-  font-weight: 700;
-  font-style: italic;
-  position: relative;
-  white-space: nowrap;
-`;
-
 const ItalicCursive = styled.i`
   font-family: Crimson Text, georgia, serif;
   letter-spacing: 1px;

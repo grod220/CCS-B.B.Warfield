@@ -10,7 +10,7 @@ const WhiteAnchor = styled.a`
 
 const BiblePromo = () => (
   <FeatureBlock image={BiblePic} disablePL>
-    We are passionate about the bible.
+    We are passionate about the Bible.
     <br />
     <WhiteAnchor
       href="https://www.youtube.com/watch?v=LR4WfUCNfX4"
