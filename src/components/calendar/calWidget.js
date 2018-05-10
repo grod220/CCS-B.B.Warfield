@@ -10,6 +10,17 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const CalWidget = () => <Container>CAL WIDGET</Container>;
+const CalWidget = ({ events }) => (
+  <Container>
+    {events.map(event => {
+      return (
+        <div>
+          <p>{event.name}</p>
+          <p>{event.description}</p>
+        </div>
+      );
+    })}
+  </Container>
+);
 
 export default CalWidget;

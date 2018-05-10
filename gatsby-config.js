@@ -31,8 +31,20 @@ module.exports = {
         theme_color: "#212121",
         display: "minimal-ui",
         icon: "src/images/favicon-cross.png"
-      },
+      }
     },
-    "gatsby-plugin-offline"
+    "gatsby-plugin-offline",
+    {
+      resolve: "gatsby-source-google-sheets",
+      options: {
+        spreadsheetId: "1PyITnQGRqwbYcsXIZNC2sANFlmKrY3SIgV7wKGW3X88",
+        worksheetTitle: "Calendar",
+        credentials: JSON.parse(
+          Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT, "base64").toString(
+            "ascii"
+          )
+        )
+      }
+    }
   ]
 };

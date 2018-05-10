@@ -10,3 +10,4 @@ yarn-error.log
 
 # Lambda built files
 lambda/build/
+secret.json
