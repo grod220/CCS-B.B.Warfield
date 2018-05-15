@@ -68,7 +68,10 @@ class CalWidget extends React.Component {
   }
 
   generateColor(name, localObj) {
-    const colorObj = sessionStorage || localObj;
+    const colorObj =
+      typeof window !== "undefined" && window.sessionStorage
+        ? window.sessionStorage
+        : localObj;
     const refColors = [
       "#ef5350",
       "#EC407A",
