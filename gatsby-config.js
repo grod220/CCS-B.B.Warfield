@@ -39,7 +39,7 @@ module.exports = {
       options: {
         spreadsheetId: "1PyITnQGRqwbYcsXIZNC2sANFlmKrY3SIgV7wKGW3X88",
         worksheetTitle: "Calendar",
-        credentials: require('./secret.json') || JSON.parse(
+        credentials: JSON.parse(
           Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT, "base64").toString(
             "ascii"
           )
