@@ -22,7 +22,7 @@ const EventBox = styled.div`
   min-width: 300px;
   flex-grow: 1;
   flex-basis: content;
-  background-color: #6378dc;
+  background-color: ${props => props.boxColor};
   color: white;
   padding: 40px;
   text-align: center;
@@ -35,13 +35,13 @@ const EventBox = styled.div`
 const EventName = styled.p`
   font-weight: bold;
   font-size: 27px;
+  font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
 `;
-
-// NEED LOGIC TO PREVENT OLD EVENTS
 
 class CalWidget extends React.Component {
   constructor() {
     super();
+    this.colorObj = {};
   }
 
   componentDidMount() {
@@ -51,7 +51,8 @@ class CalWidget extends React.Component {
 
   resizeLastTwoBoxes() {
     const allBoxes = Array.from(document.querySelectorAll(".event-box"));
-    const firstBoxSize = allBoxes[0] && allBoxes[0].offsetWidth;
+    const firstBoxSize =
+      allBoxes[0] && allBoxes[0].getBoundingClientRect().width - 0.1;
 
     if (allBoxes.length > 2) {
       allBoxes[allBoxes.length - 1].style.flex = `0 0 ${firstBoxSize}px`;
@@ -60,25 +61,78 @@ class CalWidget extends React.Component {
   }
 
   removeOldEvents(eventsArr) {
-    const twelveHours = 1000 * 60 * 60 * 12;
+    const twentyFourHours = 1000 * 60 * 60 * 24;
     return eventsArr.filter(
-      event => (Date.parse(event.date) + twelveHours) > Date.now()
+      event => Date.parse(event.date) + twentyFourHours > Date.now()
     );
+  }
+
+  generateColor(name, localObj) {
+    const colorObj = sessionStorage || localObj;
+    const refColors = [
+      "#ef5350",
+      "#EC407A",
+      "#AB47BC",
+      "#7E57C2",
+      "#5C6BC0",
+      "#42A5F5",
+      "#29B6F6",
+      "#26C6DA",
+      "#26A69A",
+      "#66BB6A",
+      "#9CCC65",
+      "#FFCA28",
+      "#FFA726",
+      "#FF7043",
+      "#8D6E63",
+      "#78909C"
+    ];
+    if (colorObj[name]) {
+      return colorObj[name];
+    } else {
+      const usedColors = Object.values(colorObj);
+      const leftOverColors = refColors.filter(
+        refColor => !usedColors.includes(refColor)
+      );
+
+      let randomIndex;
+      let randomColor;
+      if (leftOverColors.length) {
+        randomIndex = Math.floor(Math.random() * leftOverColors.length);
+        randomColor = leftOverColors[randomIndex];
+      } else {
+        randomIndex = Math.floor(Math.random() * refColors.length);
+        randomColor = refColors[randomIndex];
+      }
+      colorObj[name] = randomColor;
+      return randomColor;
+    }
   }
 
   render() {
     const { events } = this.props;
     const filteredEvents = this.removeOldEvents(events);
+
     return (
       <Container>
         <InnerContainer>
           {filteredEvents.map((event, index, arr) => {
             return (
-              <EventBox className="event-box" key={index}>
+              <EventBox
+                className="event-box"
+                key={index}
+                boxColor={() => this.generateColor(event.name, this.colorObj)}
+              >
                 <EventName>{event.name}</EventName>
                 <p>{event.description}</p>
                 <p>{event.location}</p>
-                <p>{event.date}</p>
+                <p>
+                  {new Date(event.date).toLocaleString("en", {
+                    weekday: "long",
+                    month: "long",
+                    day: "numeric"
+                  })}
+                </p>
                 <p>{event.time}</p>
               </EventBox>
             );
