@@ -7,6 +7,7 @@
     "gatsby": "^1.9.261",
     "gatsby-image": "^1.0.51",
     "gatsby-link": "^1.6.44",
+    "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-manifest": "^1.0.22",
     "gatsby-plugin-netlify-cms": "^1.0.12",
     "gatsby-plugin-offline": "^1.0.16",
