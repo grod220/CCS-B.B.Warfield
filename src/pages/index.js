@@ -11,7 +11,7 @@ import StayInTouch from "../components/shared/stayInTouch";
 import PreFooterImg from "../components/homepage/preFooterImg";
 import WhiteContentBlock from "../components/shared/whiteContentBlock";
 
-const IndexPage = ({ data: { contentYaml } }) => (
+const IndexPage = ({ data: { contentYaml, allGoogleSheetCalendarRow } }) => (
   <div>
     <Helmet
       title="Calvary Stockholm :: Building God's Kingdom"
@@ -33,7 +33,7 @@ const IndexPage = ({ data: { contentYaml } }) => (
     />
     <ServiceTimes serviceTimes={contentYaml.service_times} />
     <SummaryBlock />
-    <CalendarWidget />
+    <CalendarWidget events={allGoogleSheetCalendarRow.edges.map(edge => edge.node)} />
     <CoreValues />
     <WhiteContentBlock title="Stay in touch">
       <StayInTouch />
@@ -52,6 +52,17 @@ export const query = graphql`
         mission_statement
       }
       service_times
+    }
+    allGoogleSheetCalendarRow {
+      edges {
+        node {
+          name
+          description
+          location
+          date
+          time
+        }
+      }
     }
   }
 `;
