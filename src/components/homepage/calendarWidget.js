@@ -41,46 +41,34 @@ const ColorBar = styled.div`
   top: 0;
 `;
 
-class CalendarWidget extends React.Component {
-  constructor() {
-    super();
-    this.colorObj = {};
-  }
-
-  render() {
-    const { events } = this.props;
-    const filteredEvents = removeOldEvents(events).slice(0, 3);
-
-    return (
-      <WhiteContentBlock title="Upcoming events">
-        <TwixWrapper>
-          {filteredEvents.map((event, index, arr) => {
-            return (
-              <EventTwix key={index}>
-                <ColorBar
-                  sliverColor={() => generateColor(event.name, this.colorObj)}
-                />
-                <span>
-                  {new Date(event.date).toLocaleString("en", {
-                    weekday: "long",
-                    month: "long",
-                    day: "numeric"
-                  })}
-                </span>
-                {event.time && <span>@ {event.time}</span>}
-                <span>::</span>
-                <span>
-                  <b>{event.name}</b>
-                </span>
-                {event.location && <span>::</span>}
-                <span>{event.location}</span>
-              </EventTwix>
-            );
-          })}
-        </TwixWrapper>
-      </WhiteContentBlock>
-    );
-  }
-}
+const CalendarWidget = ({ events }) => (
+  <WhiteContentBlock title="Upcoming events">
+    <TwixWrapper>
+      {removeOldEvents(events)
+        .slice(0, 3)
+        .map((event, index, arr) => {
+          return (
+            <EventTwix key={index}>
+              <ColorBar sliverColor={() => generateColor(event.name)} />
+              <span>
+                {new Date(event.date).toLocaleDateString("en", {
+                  weekday: "long",
+                  month: "long",
+                  day: "numeric"
+                })}
+              </span>
+              {event.time && <span>@ {event.time}</span>}
+              <span>::</span>
+              <span>
+                <b>{event.name}</b>
+              </span>
+              {event.location && <span>::</span>}
+              <span>{event.location}</span>
+            </EventTwix>
+          );
+        })}
+    </TwixWrapper>
+  </WhiteContentBlock>
+);
 
 export default CalendarWidget;

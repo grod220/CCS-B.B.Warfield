@@ -1,3 +1,12 @@
+let googleCreds;
+try {
+  googleCreds = require("./secret.json");
+} catch (err) {
+  googleCreds = JSON.parse(
+    Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT, "base64").toString("ascii")
+  );
+}
+
 module.exports = {
   siteMetadata: {
     title: "Calvary Chapel Stockholm"
@@ -39,11 +48,7 @@ module.exports = {
       options: {
         spreadsheetId: "1PyITnQGRqwbYcsXIZNC2sANFlmKrY3SIgV7wKGW3X88",
         worksheetTitle: "Calendar",
-        credentials: JSON.parse(
-          Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT, "base64").toString(
-            "ascii"
-          )
-        )
+        credentials: googleCreds
       }
     },
     {
@@ -51,7 +56,7 @@ module.exports = {
       options: {
         trackingId: "UA-119387755-1",
         head: true
-      },
+      }
     }
   ]
 };

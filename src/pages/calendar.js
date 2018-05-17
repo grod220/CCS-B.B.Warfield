@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 import Hero from "../images/calendar-group-pic.jpg";
 import HeaderBlock from "../components/shared/headerBlock";
 import CalHighlight from "../components/calendar/calHighlight";
-import CalWidget from "../components/calendar/calWidget";
+import CalendarEvents from "../components/calendar/calendarEvents";
 import WhiteContentBlock from "../components/shared/whiteContentBlock";
 import StayInTouchAlt from "../components/calendar/stayInTouchAlt";
 
@@ -21,7 +21,7 @@ const Calendar = ({data: {allGoogleSheetCalendarRow : {edges}}}) => (
     />
     <HeaderBlock img={Hero} titleText="Upcoming Events" />
     <CalHighlight />
-    <CalWidget events={edges.map(edge => edge.node)} />
+    <CalendarEvents events={edges.map(edge => edge.node)} />
     <StayInTouchAlt />
   </div>
 );

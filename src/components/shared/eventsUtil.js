@@ -1,4 +1,6 @@
-export const generateColor = (name, localObj) => {
+const localObj = {};
+
+export const generateColor = name => {
   const colorObj =
     typeof window !== "undefined" && window.sessionStorage
       ? window.sessionStorage
