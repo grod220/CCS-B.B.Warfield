@@ -49,7 +49,7 @@ const CalendarWidget = ({ events }) => (
         .map((event, index, arr) => {
           return (
             <EventTwix key={index}>
-              <ColorBar sliverColor={() => generateColor(event.name)} />
+              <ColorBar sliverColor={generateColor(event.name)} />
               <span>
                 {new Date(event.date).toLocaleDateString("en", {
                   weekday: "long",

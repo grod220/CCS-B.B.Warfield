@@ -73,7 +73,7 @@ class CalendarEvents extends React.Component {
               <EventBox
                 className="event-box"
                 key={index}
-                boxColor={() => generateColor(event.name)}
+                boxColor={generateColor(event.name)}
               >
                 <EventName>{event.name}</EventName>
                 <p>{event.description}</p>
