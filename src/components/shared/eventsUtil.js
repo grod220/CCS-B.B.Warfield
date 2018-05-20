@@ -1,6 +1,9 @@
 const localObj = {};
 
 export const generateColor = name => {
+  console.log(typeof window !== "undefined");
+  console.log(window.sessionStorage);
+  console.log(localObj);
   const colorObj =
     typeof window !== "undefined" && window.sessionStorage
       ? window.sessionStorage
