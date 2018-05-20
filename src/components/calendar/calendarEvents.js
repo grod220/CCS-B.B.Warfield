@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { generateColor, removeOldEvents } from "../shared/eventsUtil";
+import ColorGenerator from "../shared/eventsUtil";
 
 const Container = styled.div`
   display: flex;
@@ -63,7 +63,7 @@ class CalendarEvents extends React.Component {
 
   render() {
     const { events } = this.props;
-    const filteredEvents = removeOldEvents(events);
+    const filteredEvents = ColorGenerator.removeOldEvents(events);
 
     return (
       <Container>
@@ -73,7 +73,7 @@ class CalendarEvents extends React.Component {
               <EventBox
                 className="event-box"
                 key={index}
-                boxColor={generateColor(event.name)}
+                boxColor={ColorGenerator.getColor(event.name)}
               >
                 <EventName>{event.name}</EventName>
                 <p>{event.description}</p>

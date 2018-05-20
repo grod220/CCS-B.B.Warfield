@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import WhiteContentBlock from "../shared/whiteContentBlock";
-import { generateColor, removeOldEvents } from "../shared/eventsUtil";
+import ColorGenerator from "../shared/eventsUtil";
 
 const TwixWrapper = styled.div`
   display: flex;
@@ -44,12 +44,12 @@ const ColorBar = styled.div`
 const CalendarWidget = ({ events }) => (
   <WhiteContentBlock title="Upcoming events">
     <TwixWrapper>
-      {removeOldEvents(events)
+      {ColorGenerator.removeOldEvents(events)
         .slice(0, 3)
         .map((event, index, arr) => {
           return (
             <EventTwix key={index}>
-              <ColorBar sliverColor={generateColor(event.name)} />
+              <ColorBar sliverColor={ColorGenerator.getColor(event.name)} />
               <span>
                 {new Date(event.date).toLocaleDateString("en", {
                   weekday: "long",
