@@ -1,68 +1,61 @@
-import React from "react";
-import styled from "styled-components";
-import Helmet from "react-helmet";
+import React from 'react'
+import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 
-import HomeHeader from "../components/homepage/homeHeader";
-import ServiceTimes from "../components/homepage/serviceTimes";
-import SummaryBlock from "../components/homepage/summaryBlock";
-import CalendarWidget from "../components/homepage/calendarWidget";
-import CoreValues from "../components/shared/coreValues";
-import StayInTouch from "../components/shared/stayInTouch";
-import PreFooterImg from "../components/homepage/preFooterImg";
-import WhiteContentBlock from "../components/shared/whiteContentBlock";
+import Layout from '../components/shared/layout'
+import HomeHeader from '../components/homepage/homeHeader'
+import ServiceTimes from '../components/homepage/serviceTimes'
+import SummaryBlock from '../components/homepage/summaryBlock'
+// import CalendarWidget from '../components/homepage/calendarWidget'
+import CoreValues from '../components/shared/coreValues'
+import StayInTouch from '../components/shared/stayInTouch'
+import PreFooterImg from '../components/homepage/preFooterImg'
+import WhiteContentBlock from '../components/shared/whiteContentBlock'
 
-const IndexPage = ({ data: { contentYaml, allGoogleSheetCalendarRow } }) => (
-  <div>
+const IndexPage = ({
+  data: {
+    site: { siteMetadata },
+  },
+}) => (
+  <Layout>
     <Helmet
-      title="Calvary Stockholm :: Building God's Kingdom"
-      meta={[
-        {
-          name: "description",
-          content:
-            "We are an english-speaking church in the heart of Stockholm, brought and bound together by one person: Jesus. Come and see that the Lord is good."
-        },
-        {
-          name: "keywords",
-          content: "christian, church, god, jesus, stockholm, english"
-        }
-      ]}
+      title={siteMetadata.index.title}
+      meta={[siteMetadata.meta.keywords, siteMetadata.index.description]}
     />
     <HomeHeader
-      missionStatement={contentYaml.mission.mission_statement}
-      pretext={contentYaml.mission.pretext}
+      missionStatement="Teach the Bible and have it transform our lives."
+      pretext="We are focused on God's mission for us:"
     />
-    <ServiceTimes serviceTimes={contentYaml.service_times} />
+    <ServiceTimes />
     <SummaryBlock />
-    <CalendarWidget events={allGoogleSheetCalendarRow.edges.map(edge => edge.node)} />
     <CoreValues />
     <WhiteContentBlock title="Stay in touch">
       <StayInTouch />
     </WhiteContentBlock>
     <PreFooterImg />
-  </div>
-);
+  </Layout>
+)
 
-export default IndexPage;
+export default IndexPage
 
-export const query = graphql`
-  query HomepageQuery {
-    contentYaml {
-      mission {
-        pretext
-        mission_statement
-      }
-      service_times
-    }
-    allGoogleSheetCalendarRow {
-      edges {
-        node {
-          name
-          description
-          location
-          date
-          time
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        index {
+          title
+          description {
+            name
+            content
+          }
+        }
+        meta {
+          keywords {
+            name
+            content
+          }
         }
       }
     }
   }
-`;
+`

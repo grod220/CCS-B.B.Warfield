@@ -8,6 +8,7 @@ import WorshipImg from "../../images/homepage-worship.jpg";
 const Container = styled.div`
   height: 31.25rem;
   width: 100vw;
+  max-width: 100%;
   background-color: #dedede;
   position: relative;
   overflow: hidden;
@@ -16,6 +17,7 @@ const Container = styled.div`
 const WithBackground = styled.div`
   background: url('${WorshipImg}');
   width: 100vw;
+  max-width: 100%;
   height: 37.5rem;
   background-size: cover;
   background-position: center;

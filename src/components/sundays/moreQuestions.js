@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Parallax } from "react-scroll-parallax";
-import { isMobile } from "react-device-detect";
-import Link from "gatsby-link";
+import { Link } from 'gatsby'
 
 import CityScape from "../../images/sundays-city-scape.jpg";
 import FeatureWithBackground from "../shared/featureWithBackground";

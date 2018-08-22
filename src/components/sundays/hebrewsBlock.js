@@ -1,7 +1,4 @@
 import React from "react";
-import styled from "styled-components";
-import { Parallax } from "react-scroll-parallax";
-import { isMobile } from "react-device-detect";
 
 import DayChurchBlur from "../../images/sundays-outside-blur.jpg";
 import FeatureWithBackground from "../shared/featureWithBackground";

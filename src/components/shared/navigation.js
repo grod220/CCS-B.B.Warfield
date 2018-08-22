@@ -1,8 +1,7 @@
-import React from "react";
-import Link from "gatsby-link";
-import styled from "styled-components";
-import Img from "gatsby-image";
-import Hamburger from "./hamburger";
+import React from 'react'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
+import Hamburger from './hamburger'
 
 const Container = styled.div`
   position: absolute;
@@ -28,7 +27,7 @@ const Container = styled.div`
     text-decoration: none;
     color: white;
   }
-`;
+`
 
 const BrandName = styled.h1`
   display: block;
@@ -47,7 +46,7 @@ const BrandName = styled.h1`
     flex-shrink: 1;
     margin: 0 0.7rem;
   }
-`;
+`
 
 const Nav = styled.ul`
   list-style-type: none;
@@ -68,12 +67,12 @@ const Nav = styled.ul`
   @media (max-width: 46.5625rem) {
     width: 12.5rem;
     text-align: center;
-    margin-top: ${props => (props.mobileMenuActive ? "4vh" : "-300vh")};
-    margin-left: ${props => (props.mobileMenuActive ? "" : "-300vw")};
+    margin-top: ${props => (props.mobileMenuActive ? '4vh' : '-300vh')};
+    margin-left: ${props => (props.mobileMenuActive ? '' : '-300vw')};
     font-size: 1.875rem;
     line-height: 10vh;
   }
-`;
+`
 
 const Item = styled.li`
   display: inline-block;
@@ -82,14 +81,14 @@ const Item = styled.li`
   @media (max-width: 46.5625rem) {
     display: block;
     margin-left: 0;
-    margin-top: ${props => (props.mobileMenuActive ? 0 : "-1.25rem")};
+    margin-top: ${props => (props.mobileMenuActive ? 0 : '-1.25rem')};
     opacity: ${props => (props.mobileMenuActive ? 1 : 0)};
     transition: ${props =>
-      props.mobileMenuActive ? "opacity 2s ease, margin .5s ease" : ""};
+      props.mobileMenuActive ? 'opacity 2s ease, margin .5s ease' : ''};
     transition-delay: ${props =>
-      props.mobileMenuActive ? props.delay + "ms" : ""};
+      props.mobileMenuActive ? props.delay + 'ms' : ''};
   }
-`;
+`
 
 const MobileMenu = styled.div`
   width: 100%;
@@ -98,28 +97,22 @@ const MobileMenu = styled.div`
   position: absolute;
   z-index: ${props => (props.mobileMenuActive ? 99 : -99)};
   opacity: ${props => (props.mobileMenuActive ? 0.98 : 0)};
-`;
+`
 
-const menuList = [
-  "Sundays",
-  "Who we are",
-  "Calendar",
-  "Giving",
-  "Get in touch"
-];
+const menuList = ['Sundays', 'Who we are', 'Calendar', 'Giving', 'Get in touch']
 
 class Navigation extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      showMobileMenu: false
-    };
+      showMobileMenu: false,
+    }
   }
 
   toggleMobileMenu = status => () =>
     this.setState(prevState => ({
-      showMobileMenu: status !== undefined ? status : !prevState.showMobileMenu
-    }));
+      showMobileMenu: status !== undefined ? status : !prevState.showMobileMenu,
+    }))
 
   render() {
     return (
@@ -142,7 +135,7 @@ class Navigation extends React.Component {
                 key={index}
               >
                 <Link
-                  to={"/" + itemTitle.toLocaleLowerCase().replace(/ /g, "")}
+                  to={'/' + itemTitle.toLocaleLowerCase().replace(/ /g, '')}
                   onClick={this.toggleMobileMenu(false)}
                 >
                   {itemTitle}
@@ -153,8 +146,8 @@ class Navigation extends React.Component {
         </Container>
         <MobileMenu mobileMenuActive={this.state.showMobileMenu} />
       </div>
-    );
+    )
   }
 }
 
-export default Navigation;
+export default Navigation

@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 import FeaturedWithBackground from "../shared/featureWithBackground";
 import Mountains from "../../images/who-we-are-mountains.jpg"

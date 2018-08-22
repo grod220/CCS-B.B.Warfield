@@ -47,9 +47,9 @@ const BottBar = Bar.extend`
 
 const Hamburger = ({ mobileMenuActive, triggerFunc }) => (
   <NavToggle onClick={triggerFunc}>
-    <TopBar rotate={mobileMenuActive} />
+    <TopBar rotate={mobileMenuActive ? 1 : 0} />
     <MidBar hide={mobileMenuActive} />
-    <BottBar rotate={mobileMenuActive} />
+    <BottBar rotate={mobileMenuActive ? 1 : 0} />
   </NavToggle>
 );
 
