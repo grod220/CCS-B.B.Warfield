@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
-import TwoHalfWhiteBlock from "../shared/twoHalfWhiteBlock";
-import FamilyPic from "../../images/who-we-are-pastor-family.jpg";
+import TwoHalfWhiteBlock from '../shared/twoHalfWhiteBlock'
+import FamilyPic from '../../images/who-we-are-pastor-family.jpg'
 
 const Title = styled.h1`
   font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
@@ -12,11 +12,11 @@ const Title = styled.h1`
   font-size: 1.625rem;
   text-align: center;
   color: #848484;
-`;
+`
 
 const FamilyImg = styled.img`
   max-height: 500px;
-`;
+`
 
 const OurPastor = () => (
   <TwoHalfWhiteBlock>
@@ -24,21 +24,19 @@ const OurPastor = () => (
     <div>
       <Title>Our Pastor</Title>
       <p>
-        Pastor Tim Chaddick and his wife Lindsey care deeply about the ministry
-        of the local church in major urban centres and have sought to devote
-        themselves to helping churches begin and flourish in their mission to
-        share and reflect the gospel.
+        A love for God, His Word, and helping others grow in their relationship
+        with God are central to Joe's ministry. Joe and his wife, Ursula, moved
+        their family of four children to Stockholm in 2005 to focus on
+        strengthening the local church, discipleship, and church planting.
       </p>
       <p>
-        Tim was born and raised in the San Francisco Bay area of California.
-        Growing up, Christian faith was the last thing on his mind as he pursued
-        pleasure, relationships and a musical career as the source of his
-        identity. It wasn’t until he heard and received the gospel of Jesus
-        Christ that the illusion of a self-centered life was shattered. In its
-        place, Tim experienced forgiveness and newness of life with God.
+        Joe became pastor at Calvary in June 2017. Other areas of interest for
+        Joe are coffee, carpentry, anything outdoors, and biblical counseling.
+        But most of all, Joe is a sinner, saved by the grace of God; ever
+        needful of God's grace and seeking to grow in His likeness.
       </p>
     </div>
   </TwoHalfWhiteBlock>
-);
+)
 
-export default OurPastor;
+export default OurPastor
