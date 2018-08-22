@@ -1,6 +1,8 @@
 import React from "react";
 import Helmet from "react-helmet";
+import { graphql } from 'gatsby'
 
+import Layout from '../components/shared/layout'
 import HeaderBlock from "../components/shared/headerBlock";
 import GatheringHighlight from "../components/sundays/gatheringHighlight";
 import ServiceTimeAndLocation from "../components/sundays/serviceTimeAndLocation";
@@ -11,16 +13,15 @@ import MoreQuestions from "../components/sundays/moreQuestions";
 
 import Hero from "../images/sundays-joe.jpg";
 
-const Sundays = () => (
-  <div>
-    <Helmet
-      title="Calvary Stockholm :: Sunday Gatherings"
-      meta={[
-        {
-          name: "description",
-          content: "Learn about what Sundays are like at Calvary."
-        }
-      ]}
+const Sundays = ({
+  data: {
+    site: { siteMetadata },
+  },
+}) => (
+  <Layout>
+<Helmet
+      title={siteMetadata.sundays.title}
+      meta={[siteMetadata.meta.keywords, siteMetadata.sundays.description]}
     />
     <HeaderBlock img={Hero} titleText="Sunday Gatherings" />
     <GatheringHighlight />
@@ -29,7 +30,29 @@ const Sundays = () => (
     <WhatToExpect />
     <ListenToAService />
     <MoreQuestions />
-  </div>
+  </Layout>
 );
 
 export default Sundays;
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        sundays {
+          title
+          description {
+            name
+            content
+          }
+        }
+        meta {
+          keywords {
+            name
+            content
+          }
+        }
+      }
+    }
+  }
+`

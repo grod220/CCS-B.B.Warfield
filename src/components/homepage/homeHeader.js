@@ -14,6 +14,7 @@ const Container = styled.div`
 const WithBackground = styled.div`
   background: url('${HeroImg}');
   width: 100vw;
+  max-width: 100%;
   height: 100vh;
   min-height: 33.75rem;
   background-size: cover;

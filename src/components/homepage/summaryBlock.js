@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Parallax } from "react-scroll-parallax";
-import { isMobile } from "react-device-detect";
 
 import BibleImg from "../../images/homepage-bible-open.jpg";
 import FeatureWithBackground from "../shared/featureWithBackground";

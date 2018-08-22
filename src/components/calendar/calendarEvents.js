@@ -41,10 +41,6 @@ const EventName = styled.p`
 `;
 
 class CalendarEvents extends React.Component {
-  constructor() {
-    super();
-  }
-
   componentDidMount() {
     this.resizeLastTwoBoxes();
     window.addEventListener("resize", this.resizeLastTwoBoxes);

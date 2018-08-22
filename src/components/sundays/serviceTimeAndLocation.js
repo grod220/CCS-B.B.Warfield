@@ -42,6 +42,7 @@ const ServiceTimeAndLocation = () => (
         width="100%"
         height="400"
         frameBorder="0"
+        title="Map location of Calvary Stockholm"
       />
       <MapsAnchor
         href="https://www.google.com/maps?ll=59.342568,18.064013&z=16&t=m&hl=en-US&gl=SE&mapclient=embed&q=Birger+Jarlsgatan+66B+114+29+Stockholm"

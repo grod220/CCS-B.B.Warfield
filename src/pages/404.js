@@ -1,21 +1,52 @@
-import React from "react";
-import Helmet from "react-helmet";
+import React from 'react'
+import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 
-import Hero from "../images/404-winter.jpg";
-import HeaderBlock from "../components/shared/headerBlock";
-import SubheadHighlight from "../components/shared/subheadHighlight";
+import Layout from '../components/shared/layout'
+import Hero from '../images/404-winter.jpg'
+import HeaderBlock from '../components/shared/headerBlock'
+import SubheadHighlight from '../components/shared/subheadHighlight'
 
-const NotFoundPage = () => (
-  <div>
+const NotFoundPage = ({
+  data: {
+    site: { siteMetadata },
+  },
+}) => (
+  <Layout>
     <Helmet
-      title="Calvary Stockholm :: 404 not found!"
-      meta={[{ name: "description", content: "Sorry! Page not found." }]}
+      title={siteMetadata.pageNotFound.title}
+      meta={[siteMetadata.meta.keywords, siteMetadata.pageNotFound.description]}
     />
     <HeaderBlock img={Hero} titleText="404 error" />
     <SubheadHighlight color="gray">
-      Hmmm... Page not found. Now where could that be? 🤔
+      Hmmm... Page not found. Now where could that be?{' '}
+      <span role="img" aria-label="hmm">
+        🤔
+      </span>
     </SubheadHighlight>
-  </div>
-);
+  </Layout>
+)
 
-export default NotFoundPage;
+export default NotFoundPage
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        pageNotFound {
+          title
+          description {
+            name
+            content
+          }
+        }
+        meta {
+          keywords {
+            name
+            content
+          }
+        }
+      }
+    }
+  }
+`

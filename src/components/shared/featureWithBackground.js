@@ -6,6 +6,7 @@ import { isMobile } from "react-device-detect";
 const Container = styled.div`
   height: ${props => props.customHeight ? props.customHeight : "31.25rem"};
   width: 100vw;
+  max-width: 100%;
   background-color: #096c85;
   position: relative;
   overflow: hidden;
@@ -17,6 +18,7 @@ const Container = styled.div`
 const WithBackground = styled.div`
   background: url('${props => props.image}');
   width: 100vw;
+  max-width: 100%;
   height: 37.5rem;
   background-size: cover;
   background-position: center;
