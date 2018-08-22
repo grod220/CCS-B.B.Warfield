@@ -55,7 +55,7 @@ const PreText = styled.div`
 
 const Statement = styled.div`
   font-family: Open Sans, Arial, Helvetica, sans-serif;
-  font-size: 5.0625rem;
+  font-size: 4rem;
   line-height: 5.1328rem;
   font-weight: 600;
   letter-spacing: -0.1406rem;
@@ -63,7 +63,7 @@ const Statement = styled.div`
 
   @media (max-width: 83rem) {
     /* Max/min font size :: reference formula: https://css-tricks.com/snippets/css/fluid-typography/ */
-    font-size: calc(2.6875rem + 35 * ((100vw - 20rem) / 1000));
+    font-size: calc(2.6875rem + 35 * ((100vw - 36rem) / 1000));
     line-height: calc(1.1em + 0.5vw);
   }
 `;

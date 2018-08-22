@@ -1,20 +1,22 @@
-import React from "react";
+import React from 'react'
 
-import SubheadHighlight from "../shared/subheadHighlight";
+import SubheadHighlight from '../shared/subheadHighlight'
 
 const GatheringHighlight = () => (
   <SubheadHighlight color="#da9a50">
     <p>
       Gathering every Sunday forms the heart of our ministry. It’s the time we
-      meet as a family, fellowship, worship, and savor the truth of God. Nori
-      grape silver beet broccoli kombu beet greens fava bean potato quandong
-      celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens
-      parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane
-      fennel azuki bean earthnut pea sierra leone bologi leek soko chicory
-      celtuce parsley jícama salsify.
+      meet as a family, fellowship, worship, and savor the truth of God. Our
+      purpose is to glorify God.
     </p>
-    <p>We hope you will join us.</p>
+    <p>
+      At 3pm every Sunday, it is fika time (Swedish coffee break). Coffee and
+      tea are hot and ready to be poured. We take that time to greet one another
+      and share about the latest in our lives. Time to visit and talk. We
+      glorify God through fellowship. After this we shift our focus to worship,
+      teaching, and prayer.
+    </p>
   </SubheadHighlight>
-);
+)
 
-export default GatheringHighlight;
+export default GatheringHighlight
