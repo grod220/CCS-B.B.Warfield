@@ -99,7 +99,9 @@ const MobileMenu = styled.div`
   opacity: ${props => (props.mobileMenuActive ? 0.98 : 0)};
 `
 
-const menuList = ['Sundays', 'Who we are', 'Calendar', 'Giving', 'Get in touch']
+// Temp disabling to go live in beta
+const menuList = ['Sundays', 'Who we are', 'Calendar']
+// const menuList = ['Sundays', 'Who we are', 'Calendar', 'Giving', 'Get in touch']
 
 class Navigation extends React.Component {
   constructor(props) {

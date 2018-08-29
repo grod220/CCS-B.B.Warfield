@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import SundayPews from "../../images/sundays-pews.jpg";
 import FeatureWithBackground from "../shared/featureWithBackground";
+import John6Audio from "../../images/john-6-message.m4a"
 
 const WhiteAnchor = styled.a`
   color: white;
@@ -11,8 +12,8 @@ const WhiteAnchor = styled.a`
 const ListenToAService = () => (
   <FeatureWithBackground image={SundayPews} customHeight="300px">
     Listen to a service!{" "}
-    <WhiteAnchor href="http://google.com" target="_blank">
-      A message on Proverbs →
+    <WhiteAnchor href={John6Audio} target="_blank">
+      A message on John 6 →
     </WhiteAnchor>
   </FeatureWithBackground>
 );
