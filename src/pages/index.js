@@ -28,7 +28,7 @@ const IndexPage = ({
     />
     <ServiceTimes />
     <SummaryBlock />
-    <CoreValues />
+    {/* <CoreValues /> */}
     <WhiteContentBlock title="Stay in touch">
       <StayInTouch />
     </WhiteContentBlock>

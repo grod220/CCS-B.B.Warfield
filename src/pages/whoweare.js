@@ -26,7 +26,7 @@ const WhoWeAre = ({
     <TheBeginning />
     <OurMission />
     <OurPastor />
-    <CoreValues />
+    {/* <CoreValues /> */}
     <ChurchFamilyPic />
     <BiblePromo />
   </Layout>

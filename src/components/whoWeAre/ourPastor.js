@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import TwoHalfWhiteBlock from '../shared/twoHalfWhiteBlock'
-import FamilyPic from '../../images/who-we-are-pastor-family.jpg'
+import PastorPic from '../../images/who-we-are-pastor.jpg'
 
 const Title = styled.h1`
   font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
@@ -20,7 +20,7 @@ const FamilyImg = styled.img`
 
 const OurPastor = () => (
   <TwoHalfWhiteBlock>
-    <FamilyImg src={FamilyPic} />
+    <FamilyImg src={PastorPic} />
     <div>
       <Title>Our Pastor</Title>
       <p>
