@@ -8,7 +8,7 @@ import 'typeface-crimson-text'
 import './layout.css'
 
 import Footer from '../shared/footer'
-import Navigation from '../shared/navigation'
+import NavigationWrapper from '../shared/navigationDataWrapper'
 
 const Container = styled.div`
   position: relative;
@@ -16,7 +16,7 @@ const Container = styled.div`
 
 const Layout = ({ children }) => (
   <Container>
-    <Navigation />
+    <NavigationWrapper />
     <ParallaxProvider>{children}</ParallaxProvider>
     <Footer />
   </Container>
