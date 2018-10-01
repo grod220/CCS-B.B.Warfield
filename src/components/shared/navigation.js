@@ -99,15 +99,17 @@ const MobileMenu = styled.div`
   opacity: ${props => (props.mobileMenuActive ? 0.98 : 0)};
 `
 
-// Temp disabling to go live in beta
-const menuList = ['Sundays', 'Who we are', 'Calendar']
-// const menuList = ['Sundays', 'Who we are', 'Calendar', 'Giving', 'Get in touch']
-
 class Navigation extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       showMobileMenu: false,
+    }
+    // Temp disabling to go live in beta
+    this.menuList = ['Sundays', 'Who we are', 'Calendar']
+    // this.menuList = ['Sundays', 'Who we are', 'Calendar', 'Giving', 'Get in touch']
+    if (!this.props.hasCalEntries) {
+      this.menuList = this.menuList.filter(item => item !== 'Calendar')
     }
   }
 
@@ -130,7 +132,7 @@ class Navigation extends React.Component {
             </Link>
           </BrandName>
           <Nav mobileMenuActive={this.state.showMobileMenu}>
-            {menuList.map((itemTitle, index) => (
+            {this.menuList.map((itemTitle, index) => (
               <Item
                 mobileMenuActive={this.state.showMobileMenu}
                 delay={index * 125}
