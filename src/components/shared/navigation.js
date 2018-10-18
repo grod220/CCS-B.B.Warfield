@@ -105,12 +105,13 @@ class Navigation extends React.Component {
     this.state = {
       showMobileMenu: false,
     }
-    // Temp disabling to go live in beta
-    this.menuList = ['Sundays', 'Who we are', 'Calendar']
-    // this.menuList = ['Sundays', 'Who we are', 'Calendar', 'Giving', 'Get in touch']
-    if (!this.props.hasCalEntries) {
-      this.menuList = this.menuList.filter(item => item !== 'Calendar')
-    }
+    /* Add 'Giving' when ready */
+    this.menuList = [
+      'Sundays',
+      'Who we are',
+      'Calendar',
+      'Get in touch',
+    ].filter(item => this.props.hasCalEntries || item !== 'Calendar')
   }
 
   toggleMobileMenu = status => () =>
@@ -120,7 +121,7 @@ class Navigation extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <Container>
           <BrandName>
             <Hamburger
@@ -149,7 +150,7 @@ class Navigation extends React.Component {
           </Nav>
         </Container>
         <MobileMenu mobileMenuActive={this.state.showMobileMenu} />
-      </div>
+      </>
     )
   }
 }
