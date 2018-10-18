@@ -29,7 +29,7 @@ const Sundays = ({
     <HebrewsBlock />
     <WhatToExpect />
     <ListenToAService />
-    {/* <MoreQuestions /> */}
+    <MoreQuestions />
   </Layout>
 );
 
