@@ -10,13 +10,9 @@ const Container = styled.div`
 const AccountInfo = () => (
   <WhiteContentBlock title="Account info">
     <Container>
-      <p>CityLight Hamburg e.V. :: Hamburger Volksbank</p>
-      <p>
-        IBAN: DE31201900030057250006<br />BIC: GENODEF1HH2
-      </p>
-      <p>
-        Account: 57250006<br />Bank ID: 20190003
-      </p>
+      <p>Gifts to the church can be sent through bank transfers</p>
+      <p>BANKGIRO: 404-1711</p>
+      <p>Calvary Stockholm Bibelstudier</p>
     </Container>
   </WhiteContentBlock>
 );

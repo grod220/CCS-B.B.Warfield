@@ -32,14 +32,14 @@ const Bar = styled.span`
   margin-bottom: 0.3125rem;
 `;
 
-const TopBar = Bar.extend`
+const TopBar = styled(Bar)`
   transform: ${props => (props.rotate ? "rotate(45deg)" : "none")};
   transform-origin: ${props => (props.rotate ? "14% 116%" : "50% 50% 0")};
 `;
-const MidBar = Bar.extend`
+const MidBar = styled(Bar)`
   opacity: ${props => (props.hide ? 0 : 1)};
 `;
-const BottBar = Bar.extend`
+const BottBar = styled(Bar)`
   margin-bottom: 0;
   transform: ${props => (props.rotate ? "rotate(-45deg)" : "none")};
   transform-origin: ${props => (props.rotate ? "17% 14%" : "50% 50% 0")};

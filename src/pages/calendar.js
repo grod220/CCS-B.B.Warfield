@@ -8,7 +8,7 @@ import HeaderBlock from '../components/shared/headerBlock'
 import CalHighlight from '../components/calendar/calHighlight'
 import CalendarEvents from "../components/calendar/calendarEvents";
 import StayInTouchAlt from '../components/calendar/stayInTouchAlt'
-// {data: {allGoogleSheetCalendarRow : {edges}}}
+
 const Calendar = ({
   data: {
     site: { siteMetadata },
