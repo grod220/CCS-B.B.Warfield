@@ -24,10 +24,14 @@ const QuickHello = () => (
     <div>
       <Title>A quick hello from Joe</Title>
       <p>
-        We welcome everyone at Calvary. We're all at different parts of our walk
-        with Jesus and want to walk alongside you as we get to know him better
-        together. Whether you’re curious about the church, interested in
-        visiting, or just want to have a coffee chat---we’d love to talk to you.
+        We welcome you to contact us or visit us on Sundays. We welcome people
+        desiring to be part of a gospel-centered church, who want to grow in
+        their faith and relationship with God. We welcome others who are
+        seeking, searching for meanng beyond the here-and-now. We welcome
+        skeptics who want to observe or interact with what seems so unlikely.
+        For whatever reason you come, it is our hope and prayer that you will
+        taste and see the goodness of God, in the simple gathering of ordinary
+        people we call, Calvary Stockholm.
       </p>
     </div>
   </TwoHalfWhiteBlock>

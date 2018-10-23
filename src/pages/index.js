@@ -6,15 +6,17 @@ import Layout from '../components/shared/layout'
 import HomeHeader from '../components/homepage/homeHeader'
 import ServiceTimes from '../components/homepage/serviceTimes'
 import SummaryBlock from '../components/homepage/summaryBlock'
-// import CalendarWidget from '../components/homepage/calendarWidget'
+import CalendarWidget from '../components/homepage/calendarWidget'
 import CoreValues from '../components/shared/coreValues'
 import StayInTouch from '../components/shared/stayInTouch'
 import PreFooterImg from '../components/homepage/preFooterImg'
 import WhiteContentBlock from '../components/shared/whiteContentBlock'
+import ColorGenerator from '../components/shared/eventsUtil'
 
 const IndexPage = ({
   data: {
     site: { siteMetadata },
+    allGoogleSheetCalendarRow: { edges },
   },
 }) => (
   <Layout>
@@ -28,7 +30,10 @@ const IndexPage = ({
     />
     <ServiceTimes />
     <SummaryBlock />
-    {/* <CoreValues /> */}
+    {ColorGenerator.removeOldEvents(edges.map(edge => edge.node)).length && (
+      <CalendarWidget events={edges.map(edge => edge.node)} />
+    )}
+    <CoreValues />
     <WhiteContentBlock title="Stay in touch">
       <StayInTouch />
     </WhiteContentBlock>
@@ -54,6 +59,17 @@ export const pageQuery = graphql`
             name
             content
           }
+        }
+      }
+    }
+    allGoogleSheetCalendarRow {
+      edges {
+        node {
+          name
+          description
+          location
+          date
+          time
         }
       }
     }

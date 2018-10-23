@@ -105,12 +105,14 @@ class Navigation extends React.Component {
     this.state = {
       showMobileMenu: false,
     }
-    /* Add 'Giving' when ready */
+
     this.menuList = [
       'Sundays',
       'Who we are',
       'Calendar',
+      'Giving',
       'Get in touch',
+      'Facebook',
     ].filter(item => this.props.hasCalEntries || item !== 'Calendar')
   }
 
@@ -120,38 +122,46 @@ class Navigation extends React.Component {
     }))
 
   render() {
-    return (
-      <>
-        <Container>
-          <BrandName>
-            <Hamburger
+    return <>
+      <Container>
+        <BrandName>
+          <Hamburger
+            mobileMenuActive={this.state.showMobileMenu}
+            triggerFunc={this.toggleMobileMenu()}
+          />
+          <Link to="/" onClick={this.toggleMobileMenu(false)}>
+            Calvary Stockholm
+          </Link>
+        </BrandName>
+        <Nav mobileMenuActive={this.state.showMobileMenu}>
+          {this.menuList.map((itemTitle, index) => (
+            <Item
               mobileMenuActive={this.state.showMobileMenu}
-              triggerFunc={this.toggleMobileMenu()}
-            />
-            <Link to="/" onClick={this.toggleMobileMenu(false)}>
-              Calvary Stockholm
-            </Link>
-          </BrandName>
-          <Nav mobileMenuActive={this.state.showMobileMenu}>
-            {this.menuList.map((itemTitle, index) => (
-              <Item
-                mobileMenuActive={this.state.showMobileMenu}
-                delay={index * 125}
-                key={index}
-              >
+              delay={index * 125}
+              key={index}
+              onClick={this.toggleMobileMenu(false)}
+            >
+              {itemTitle === 'Facebook' ? (
+                <a
+                  href="https://www.facebook.com/Calvary-Stockholm-210152705725292"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {itemTitle}
+                </a>
+              ) : (
                 <Link
                   to={'/' + itemTitle.toLocaleLowerCase().replace(/ /g, '')}
-                  onClick={this.toggleMobileMenu(false)}
                 >
                   {itemTitle}
                 </Link>
-              </Item>
-            ))}
-          </Nav>
-        </Container>
-        <MobileMenu mobileMenuActive={this.state.showMobileMenu} />
-      </>
-    )
+              )}
+            </Item>
+          ))}
+        </Nav>
+      </Container>
+      <MobileMenu mobileMenuActive={this.state.showMobileMenu} />
+    </>;
   }
 }
 

@@ -13,7 +13,7 @@ const Styling = styled.div`
 `;
 
 const HowWeSeeGiving = () => (
-  <FeatureBlock image={TreesPic} disablePL customHeight="330px">
+  <FeatureBlock image={TreesPic} customHeight="330px">
     <Styling>
       Learn more about{" "}
       <WhiteAnchor href="http://www.spotify.com" target="_blank">
