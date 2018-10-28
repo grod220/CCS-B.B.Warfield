@@ -16,7 +16,7 @@ const HowWeSeeGiving = () => (
   <FeatureBlock image={TreesPic} customHeight="330px">
     <Styling>
       Learn more about{" "}
-      <WhiteAnchor href="http://www.spotify.com" target="_blank">
+      <WhiteAnchor href="https://www.youtube.com/watch?v=4cs0gRxzKpY" target="_blank">
         we see giving →
       </WhiteAnchor>
     </Styling>
