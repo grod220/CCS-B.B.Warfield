@@ -11,7 +11,7 @@ const GivingHighlight = () => (
   <SubheadHighlight color="#50a1da">
     <Text>
       Giving serves two main purposes. It is the means of which we can maintain
-      minitries and help those in need. It also is an act of personal trust in
+      ministries and help those in need. It also is an act of personal trust in
       God and worship.
     </Text>
   </SubheadHighlight>

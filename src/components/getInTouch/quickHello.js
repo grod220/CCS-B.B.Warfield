@@ -27,7 +27,7 @@ const QuickHello = () => (
         We welcome you to contact us or visit us on Sundays. We welcome people
         desiring to be part of a gospel-centered church, who want to grow in
         their faith and relationship with God. We welcome others who are
-        seeking, searching for meanng beyond the here-and-now. We welcome
+        seeking, searching for meaning beyond the here-and-now. We welcome
         skeptics who want to observe or interact with what seems so unlikely.
         For whatever reason you come, it is our hope and prayer that you will
         taste and see the goodness of God, in the simple gathering of ordinary
