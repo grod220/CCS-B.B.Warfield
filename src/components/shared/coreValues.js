@@ -30,7 +30,7 @@ const Separator = styled.div`
 `
 
 const CoreValues = () => (
-  <FeaturedWithBackground title="Our core values" image={SkyBackground}>
+  <FeaturedWithBackground title="Our core values" image={SkyBackground} disablePL>
     <BlockWrapper>
       <NumberBlock num={1} bigText="Jesus Christ" smallText="our foundation" />
       <Separator />

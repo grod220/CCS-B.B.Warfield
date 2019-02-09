@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { Parallax } from "react-scroll-parallax";
-import { isMobile } from "react-device-detect";
+import React from 'react'
+import styled from 'styled-components'
+import { Parallax } from 'react-scroll-parallax'
+import { isMobile } from 'react-device-detect'
 
-import RamenGroupPic from "../../images/homepage-ramen.jpg";
+import RamenGroupPic from '../../images/homepage-ramen.jpg'
 
 const Container = styled.div`
   height: 31.25rem;
@@ -12,7 +12,7 @@ const Container = styled.div`
   background-color: #dedede;
   position: relative;
   overflow: hidden;
-`;
+`
 
 const WithBackground = styled.div`
   background: url('${RamenGroupPic}');
@@ -21,19 +21,19 @@ const WithBackground = styled.div`
   height: 37.5rem;
   background-size: cover;
   background-position: center;
-`;
+`
 
 const PreFooterImg = () => (
   <Container>
     <Parallax
       offsetYMin={-40}
-      offsetYMax={20}
+      offsetYMax={0}
       slowerScrollRate
       disabled={isMobile}
     >
       <WithBackground />
     </Parallax>
   </Container>
-);
+)
 
-export default PreFooterImg;
+export default PreFooterImg
