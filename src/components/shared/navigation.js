@@ -110,7 +110,6 @@ class Navigation extends React.Component {
       'Sundays',
       'Who we are',
       'Calendar',
-      'Giving',
       'Get in touch',
       'Facebook',
     ].filter(item => this.props.hasCalEntries || item !== 'Calendar')

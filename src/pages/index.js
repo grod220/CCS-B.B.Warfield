@@ -51,7 +51,6 @@ class IndexPage extends React.Component {
         />
         <ServiceTimes />
         <SummaryBlock />
-        {console.log(this.state)}
         {this.state.upcomingEvents &&
           Boolean(this.state.upcomingEvents.length) && (
             <CalendarWidget events={this.state.upcomingEvents} />
