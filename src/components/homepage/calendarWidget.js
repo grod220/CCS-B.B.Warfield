@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
-import WhiteContentBlock from "../shared/whiteContentBlock";
-import ColorGenerator from "../shared/eventsUtil";
+import WhiteContentBlock from '../shared/whiteContentBlock'
+import ColorGenerator from '../shared/eventsUtil'
 
 const TwixWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+`
 
 const EventTwix = styled.div`
   display: flex;
@@ -30,7 +30,7 @@ const EventTwix = styled.div`
   span + span {
     margin-left: 10px;
   }
-`;
+`
 
 const ColorBar = styled.div`
   height: 100%;
@@ -39,22 +39,22 @@ const ColorBar = styled.div`
   position: absolute;
   left: 0;
   top: 0;
-`;
+`
 
 const CalendarWidget = ({ events }) => (
   <WhiteContentBlock title="Upcoming events">
     <TwixWrapper>
       {ColorGenerator.removeOldEvents(events)
         .slice(0, 3)
-        .map((event, index, arr) => {
+        .map((event, index) => {
           return (
             <EventTwix key={index}>
               <ColorBar sliverColor={ColorGenerator.getColor(event.name)} />
               <span>
-                {new Date(event.date).toLocaleDateString("en", {
-                  weekday: "long",
-                  month: "long",
-                  day: "numeric"
+                {new Date(event.date).toLocaleDateString('en', {
+                  weekday: 'long',
+                  month: 'long',
+                  day: 'numeric',
                 })}
               </span>
               {event.time && <span>@ {event.time}</span>}
@@ -65,10 +65,10 @@ const CalendarWidget = ({ events }) => (
               {event.location && <span>::</span>}
               <span>{event.location}</span>
             </EventTwix>
-          );
+          )
         })}
     </TwixWrapper>
   </WhiteContentBlock>
-);
+)
 
-export default CalendarWidget;
+export default CalendarWidget
