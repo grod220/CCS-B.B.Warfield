@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import SundayPews from "../../images/sundays-pews.jpg";
 import FeatureWithBackground from "../shared/featureWithBackground";
-import John6Audio from "../../images/john-6-message.m4a"
+import John6Audio from "../../images/john-6-message.mp3"
 
 const WhiteAnchor = styled.a`
   color: white;

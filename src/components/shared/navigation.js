@@ -121,46 +121,48 @@ class Navigation extends React.Component {
     }))
 
   render() {
-    return <>
-      <Container>
-        <BrandName>
-          <Hamburger
-            mobileMenuActive={this.state.showMobileMenu}
-            triggerFunc={this.toggleMobileMenu()}
-          />
-          <Link to="/" onClick={this.toggleMobileMenu(false)}>
-            Calvary Stockholm
-          </Link>
-        </BrandName>
-        <Nav mobileMenuActive={this.state.showMobileMenu}>
-          {this.menuList.map((itemTitle, index) => (
-            <Item
+    return (
+      <>
+        <Container>
+          <BrandName>
+            <Hamburger
               mobileMenuActive={this.state.showMobileMenu}
-              delay={index * 125}
-              key={index}
-              onClick={this.toggleMobileMenu(false)}
-            >
-              {itemTitle === 'Facebook' ? (
-                <a
-                  href="https://www.facebook.com/Calvary-Stockholm-210152705725292"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {itemTitle}
-                </a>
-              ) : (
-                <Link
-                  to={'/' + itemTitle.toLocaleLowerCase().replace(/ /g, '')}
-                >
-                  {itemTitle}
-                </Link>
-              )}
-            </Item>
-          ))}
-        </Nav>
-      </Container>
-      <MobileMenu mobileMenuActive={this.state.showMobileMenu} />
-    </>;
+              triggerFunc={this.toggleMobileMenu()}
+            />
+            <Link to="/" onClick={this.toggleMobileMenu(false)}>
+              Calvary Stockholm
+            </Link>
+          </BrandName>
+          <Nav mobileMenuActive={this.state.showMobileMenu}>
+            {this.menuList.map((itemTitle, index) => (
+              <Item
+                mobileMenuActive={this.state.showMobileMenu}
+                delay={index * 125}
+                key={index}
+                onClick={this.toggleMobileMenu(false)}
+              >
+                {itemTitle === 'Facebook' ? (
+                  <a
+                    href="https://www.facebook.com/calvarystockholm/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {itemTitle}
+                  </a>
+                ) : (
+                  <Link
+                    to={'/' + itemTitle.toLocaleLowerCase().replace(/ /g, '')}
+                  >
+                    {itemTitle}
+                  </Link>
+                )}
+              </Item>
+            ))}
+          </Nav>
+        </Container>
+        <MobileMenu mobileMenuActive={this.state.showMobileMenu} />
+      </>
+    )
   }
 }
 

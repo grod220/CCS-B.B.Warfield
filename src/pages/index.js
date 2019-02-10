@@ -46,8 +46,8 @@ class IndexPage extends React.Component {
           meta={[siteMetadata.meta.keywords, siteMetadata.index.description]}
         />
         <HomeHeader
-          missionStatement="Love God, love others, and repent & believe the Gospel when we fail."
-          pretext="We are focused on God's mission for us:"
+          missionStatement="Love God, love others, and repent and believe the Gospel when we fail."
+          pretext="God's mission for us:"
         />
         <ServiceTimes />
         <SummaryBlock />

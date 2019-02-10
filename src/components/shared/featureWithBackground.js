@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import { Parallax } from "react-scroll-parallax";
-import { isMobile } from "react-device-detect";
+import React from 'react'
+import styled from 'styled-components'
+import { Parallax } from 'react-scroll-parallax'
+import { isMobile } from 'react-device-detect'
 
 const Container = styled.div`
-  height: ${props => props.customHeight ? props.customHeight : "31.25rem"};
+  height: ${props => (props.customHeight ? props.customHeight : '31.25rem')};
   width: 100vw;
   max-width: 100%;
   background-color: #096c85;
@@ -13,16 +13,16 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const WithBackground = styled.div`
   background: url('${props => props.image}');
   width: 100vw;
   max-width: 100%;
-  height: 37.5rem;
+  height: ${props => (props.customHeight ? props.customHeight : '37.5rem')};
   background-size: cover;
   background-position: center;
-`;
+`
 
 const HighlightText = styled.div`
   position: absolute;
@@ -42,7 +42,7 @@ const HighlightText = styled.div`
   @media (max-width: 50rem) {
     font-size: 2.125rem;
   }
-`;
+`
 
 const Title = styled.h1`
   font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
@@ -54,12 +54,19 @@ const Title = styled.h1`
   color: #848484;
   font-style: normal;
   color: white;
-`;
+`
 
-const FeatureWithBackground = ({ children, image, customHeight, disablePL, title }) => (
+const FeatureWithBackground = ({
+  children,
+  image,
+  customHeight,
+  backgroundHeight,
+  disablePL,
+  title,
+}) => (
   <Container customHeight={customHeight}>
     <HighlightText>
-      { title ? <Title>{title}</Title> : "" }
+      {title ? <Title>{title}</Title> : ''}
       {children}
     </HighlightText>
     <Parallax
@@ -68,9 +75,9 @@ const FeatureWithBackground = ({ children, image, customHeight, disablePL, title
       slowerScrollRate
       disabled={isMobile || disablePL}
     >
-      <WithBackground image={image} />
+      <WithBackground image={image} customHeight={backgroundHeight} />
     </Parallax>
   </Container>
-);
+)
 
-export default FeatureWithBackground;
+export default FeatureWithBackground

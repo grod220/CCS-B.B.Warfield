@@ -49,13 +49,13 @@ const PreText = styled.div`
   font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.2813rem;
+  letter-spacing: 0.135rem;
   font-size: 1.125rem;
 `;
 
 const Statement = styled.div`
   font-family: Open Sans, Arial, Helvetica, sans-serif;
-  font-size: 4rem;
+  font-size: 3.75rem;
   line-height: 5.1328rem;
   font-weight: 600;
   letter-spacing: -0.1406rem;

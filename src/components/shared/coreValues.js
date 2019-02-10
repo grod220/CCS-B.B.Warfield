@@ -22,25 +22,54 @@ const BlockWrapper = styled.div`
 const Separator = styled.div`
   background: #8b7259;
   width: 2px;
-  opacity: .4;
+  opacity: 0.4;
 
   @media (max-width: 920px) {
     display: none;
   }
 `
 
-const CoreValues = () => (
-  <FeaturedWithBackground title="Our core values" image={SkyBackground} disablePL>
-    <BlockWrapper>
-      <NumberBlock num={1} bigText="Jesus Christ" smallText="our foundation" />
-      <Separator />
-      <NumberBlock num={2} bigText="God's word" smallText="our guide" />
-      <Separator />
-      <NumberBlock num={3} bigText="The Gospel" smallText="our anthem" />
-      <Separator />
-      <NumberBlock num={4} bigText="God's Glory" smallText="our aim" />
-    </BlockWrapper>
-  </FeaturedWithBackground>
-)
+class CoreValues extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { screenWidth: this.getWidth() }
+  }
+
+  getWidth() {
+    return Math.max(
+      document.body.scrollWidth,
+      document.documentElement.scrollWidth,
+      document.body.offsetWidth,
+      document.documentElement.offsetWidth,
+      document.documentElement.clientWidth
+    )
+  }
+
+  render() {
+    return (
+      <FeaturedWithBackground
+        title="Our core values"
+        image={SkyBackground}
+        customHeight={this.state.screenWidth <= 387 ? '49rem' : null}
+        backgroundHeight={this.state.screenWidth <= 387 ? '49rem' : null}
+        disablePL
+      >
+        <BlockWrapper>
+          <NumberBlock
+            num={1}
+            bigText="Jesus Christ"
+            smallText="our foundation"
+          />
+          <Separator />
+          <NumberBlock num={2} bigText="God's word" smallText="our guide" />
+          <Separator />
+          <NumberBlock num={3} bigText="The Gospel" smallText="our anthem" />
+          <Separator />
+          <NumberBlock num={4} bigText="God's Glory" smallText="our aim" />
+        </BlockWrapper>
+      </FeaturedWithBackground>
+    )
+  }
+}
 
 export default CoreValues

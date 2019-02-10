@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-import CityScape from "../../images/sundays-city-scape.jpg";
-import FeatureWithBackground from "../shared/featureWithBackground";
+import CityScape from '../../images/sundays-city-scape.jpg'
+import FeatureWithBackground from '../shared/featureWithBackground'
 
 const CustomStyle = styled.div`
   font-family: Open Sans, Arial, Helvetica, sans-serif;
@@ -18,7 +18,7 @@ const CustomStyle = styled.div`
   @media (max-width: 50rem) {
     font-size: 28px;
   }
-`;
+`
 
 const ItalicCursive = styled.i`
   font-family: Crimson Text, georgia, serif;
@@ -27,15 +27,17 @@ const ItalicCursive = styled.i`
 
 const WhiteAnchor = styled(Link)`
   color: white;
-`;
+`
 const MoreQuestions = () => (
   <FeatureWithBackground image={CityScape} disablePL>
     <CustomStyle>
-      Have more questions? <br />Write us an email or send us a text, we’re here
-      for you! <br />
-      <WhiteAnchor to="/getintouch"><ItalicCursive>Get in touch →</ItalicCursive></WhiteAnchor>
+      Have more questions? <br />
+      Write us an email or message us on Facebook, we’re here for you! <br />
+      <WhiteAnchor to="/getintouch">
+        <ItalicCursive>Get in touch →</ItalicCursive>
+      </WhiteAnchor>
     </CustomStyle>
   </FeatureWithBackground>
-);
+)
 
-export default MoreQuestions;
+export default MoreQuestions

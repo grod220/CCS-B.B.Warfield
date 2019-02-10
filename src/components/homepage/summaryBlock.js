@@ -6,9 +6,13 @@ import FeatureWithBackground from "../shared/featureWithBackground";
 
 const CustomStyle = styled.div`
   font-family: Open Sans, Arial, Helvetica, sans-serif;
-  line-height: 4.4375rem;
   font-weight: 600;
   font-style: normal;
+  line-height: 4.4375rem;
+
+  @media (max-width: 50rem) {
+    line-height: 3.125rem;
+  }
 `;
 
 const EnglishBold = styled.span`
@@ -21,7 +25,7 @@ const EnglishBold = styled.span`
 const SummaryBlock = () => (
   <FeatureWithBackground image={BibleImg}>
     <CustomStyle>
-      We are an <EnglishBold>english-speaking</EnglishBold> church in the heart
+      We are an <EnglishBold>English-speaking</EnglishBold> church in the heart
       of Stockholm, brought and bound together by one person: Jesus.
     </CustomStyle>
   </FeatureWithBackground>
