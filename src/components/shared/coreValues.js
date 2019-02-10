@@ -32,17 +32,21 @@ const Separator = styled.div`
 class CoreValues extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { screenWidth: this.getWidth() }
+    this.state = { windowWidth: this.getWidth() }
   }
 
   getWidth() {
-    return Math.max(
-      document.body.scrollWidth,
-      document.documentElement.scrollWidth,
-      document.body.offsetWidth,
-      document.documentElement.offsetWidth,
-      document.documentElement.clientWidth
-    )
+    if (typeof window !== 'undefined') {
+      return Math.max(
+        document.body.scrollWidth,
+        document.documentElement.scrollWidth,
+        document.body.offsetWidth,
+        document.documentElement.offsetWidth,
+        document.documentElement.clientWidth
+      )
+    } else {
+      return 1000
+    }
   }
 
   render() {
@@ -50,8 +54,8 @@ class CoreValues extends React.Component {
       <FeaturedWithBackground
         title="Our core values"
         image={SkyBackground}
-        customHeight={this.state.screenWidth <= 387 ? '49rem' : null}
-        backgroundHeight={this.state.screenWidth <= 387 ? '49rem' : null}
+        customHeight={this.state.windowWidth <= 387 ? '49rem' : null}
+        backgroundHeight={this.state.windowWidth <= 387 ? '49rem' : null}
         disablePL
       >
         <BlockWrapper>
