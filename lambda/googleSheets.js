@@ -93,7 +93,7 @@ exports.handler = async function(event, context, callback) {
     const emailToSignup = JSON.parse(event.body).email
     const sheets = await authorizeSheets(process.env.GOOGLE_SERVICE_ACCOUNT)
     const res = await addToCol(sheets, 'Local!F2', emailToSignup)
-    const emailResponse = await sendToJoe(emailToSignup)
+    // const emailResponse = await sendToJoe(emailToSignup)
     return { statusCode: res.status, body: JSON.stringify(res.data) }
   } catch (err) {
     return { statusCode: 500, body: err.toString() }
