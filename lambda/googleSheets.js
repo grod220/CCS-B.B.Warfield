@@ -2,27 +2,25 @@
 
 import { google } from 'googleapis'
 
-const getClient = async (base64Keys, scopes) => {
+const getClient = async scopes => {
   return await google.auth.getClient({
     credentials: JSON.parse(
-      Buffer.from(base64Keys, 'base64').toString('ascii')
+      Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT, 'base64').toString('ascii')
     ),
     scopes: scopes,
   })
 }
 
-const authorizeSheets = base64Keys => {
-  const client = getClient(base64Keys, [
-    'https://www.googleapis.com/auth/spreadsheets',
-  ])
+const authorizeSheets = () => {
+  const client = getClient(['https://www.googleapis.com/auth/spreadsheets'])
   return google.sheets({
     version: 'v4',
     auth: client,
   })
 }
 
-const authorizeGmail = base64Keys => {
-  const client = getClient(base64Keys, [
+const authorizeGmail = () => {
+  const client = getClient([
     'https://mail.google.com/',
     'https://www.googleapis.com/auth/gmail.modify',
     'https://www.googleapis.com/auth/gmail.compose',
@@ -56,6 +54,7 @@ const sendToJoe = email => {
     .replace(/\//g, '_')
     .replace(/=+$/, '');
 
+  const gmail = await authorizeGmail();
   const res = await gmail.users.messages.send({
     userId: 'me',
     requestBody: {
@@ -66,8 +65,9 @@ const sendToJoe = email => {
   return res.data;
 }
 
-const addToCol = (sheets, range, emailAddress) => {
+const addToCol = (range, emailAddress) => {
   return new Promise((resolve, reject) => {
+    const sheets = await authorizeSheets()
     sheets.spreadsheets.values.append(
       {
         spreadsheetId: '1PyITnQGRqwbYcsXIZNC2sANFlmKrY3SIgV7wKGW3X88',
@@ -91,10 +91,9 @@ const addToCol = (sheets, range, emailAddress) => {
 exports.handler = async function(event, context, callback) {
   try {
     const emailToSignup = JSON.parse(event.body).email
-    const sheets = await authorizeSheets(process.env.GOOGLE_SERVICE_ACCOUNT)
-    const res = await addToCol(sheets, 'Local!F2', emailToSignup)
-    // const emailResponse = await sendToJoe(emailToSignup)
-    return { statusCode: res.status, body: JSON.stringify(res.data) }
+    const sheetsPromise = addToCol('Local!F2', emailToSignup) // don't resolve though. Not going to fix if failure.
+    const emailResponse = await sendToJoe(emailToSignup)
+    return { statusCode: emailResponse.status, body: JSON.stringify(emailResponse.data) }
   } catch (err) {
     return { statusCode: 500, body: err.toString() }
   }
