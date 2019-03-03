@@ -1,11 +1,9 @@
-let googleCreds
-try {
-  googleCreds = require('./secret.json')
-} catch (err) {
-  googleCreds = JSON.parse(
-    Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT, 'base64').toString('ascii')
-  )
-}
+import { config as dotenvConfig } from 'dotenv'
+dotenvConfig()
+
+const googleCreds = googleCreds = JSON.parse(
+  Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT, 'base64').toString('ascii')
+)
 
 module.exports = {
   siteMetadata: {
