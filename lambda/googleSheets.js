@@ -119,12 +119,12 @@ const addToCol = async (range, emailAddress) => {
 exports.handler = async function(event, context, callback) {
   try {
     const emailToSignup = JSON.parse(event.body).email
-    // const sheetsRes = await addToCol('Local!F2', emailToSignup) // don't resolve though. Not going to fix if failure.
-    const emailResponse = await sendToJoe(emailToSignup)
+    const sheetsRes = await addToCol('Local!F2', emailToSignup) // don't resolve though. Not going to fix if failure.
+    // const emailResponse = await sendToJoe(emailToSignup)
     console.log(emailResponse)
     return {
-      statusCode: emailResponse.status,
-      body: JSON.stringify(emailResponse),
+      statusCode: sheetsRes.status,
+      body: JSON.stringify(sheetsRes),
     }
   } catch (err) {
     console.log(err)
