@@ -1,7 +1,6 @@
-import { config as dotenvConfig } from 'dotenv'
-dotenvConfig()
+require('dotenv').config()
 
-const googleCreds = googleCreds = JSON.parse(
+const googleCreds = JSON.parse(
   Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT, 'base64').toString('ascii')
 )
 
