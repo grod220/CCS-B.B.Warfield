@@ -68,10 +68,10 @@ const sendToJoe = email => {
   return new Promise((resolve, reject) => {
     sendmail(
       {
-        from: 'no-reply@calvarystockholm.com',
+        from: 'robot@calvarystockholm.se',
         to: 'grod220@gmail.com',
-        subject: 'testerrrr',
-        html: `Mail of test sendmail: New email ${email}`,
+        subject: `New email submitted: ${new Date().toLocaleDateString()}`,
+        html: `Email submitted: <b>${email}</b>`,
       },
       function(err, reply) {
         if (err) {
