@@ -5,7 +5,7 @@ import { config as dotenvConfig } from 'dotenv'
 
 dotenvConfig()
 
-const getClient = ({scopes}) => {
+const getClient = ({ scopes }) => {
   return google.auth.getClient({
     credentials: JSON.parse(
       Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT, 'base64').toString(
@@ -17,57 +17,80 @@ const getClient = ({scopes}) => {
 }
 
 const authorizeSheets = async () => {
-  const client = await getClient({scopes: ['https://www.googleapis.com/auth/spreadsheets']})
+  const client = await getClient({
+    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+  })
   return google.sheets({
     version: 'v4',
     auth: client,
   })
 }
 
-const authorizeGmail = () => {
-  const client = getClient([
-    'https://mail.google.com/',
-    'https://www.googleapis.com/auth/gmail.modify',
-    'https://www.googleapis.com/auth/gmail.compose',
-    'https://www.googleapis.com/auth/gmail.send',
-  ])
+const authorizeGmail = async () => {
+  const client = await getClient({
+    scopes: [
+      'https://www.googleapis.com/auth/gmail.modify',
+      'https://www.googleapis.com/auth/gmail.compose',
+      'https://www.googleapis.com/auth/gmail.send',
+    ],
+  })
   return google.gmail({
     version: 'v1',
     auth: client,
   })
 }
 
-const sendToJoe = async email => {
+const encodeEmailMessage = email => {
   const subject = `New website signup: ${new Date().toLocaleDateString()}`
   const utf8Subject = `=?utf-8?B?${Buffer.from(subject).toString('base64')}?=`
   const messageParts = [
-    'From: Mr. Robot <robot@robot.com>',
-    `To: Gabe <${email}>`,
+    'From: Mr. Robot <grod220@gmail.com>',
+    `To: Gabe <grod220@gmail.com>`,
     'Content-Type: text/html; charset=utf-8',
     'MIME-Version: 1.0',
     `Subject: ${utf8Subject}`,
     '',
     'This is a message just to say hello.',
-    'So... <b>Hello!</b>  🤘❤️😎',
+    `New email signed up: ${email}  🤘❤️😎`,
   ]
   const message = messageParts.join('\n')
 
   // The body needs to be base64url encoded.
-  const encodedMessage = Buffer.from(message)
+  return Buffer.from(message)
     .toString('base64')
     .replace(/\+/g, '-')
     .replace(/\//g, '_')
     .replace(/=+$/, '')
+}
 
-  const gmail = await authorizeGmail()
-  const res = await gmail.users.messages.send({
-    userId: 'me',
-    requestBody: {
-      raw: encodedMessage,
-    },
+const sendToJoe = email => {
+  const sendmail = require('sendmail')()
+  return new Promise((resolve, reject) => {
+    sendmail(
+      {
+        from: 'no-reply@calvarystockholm.com',
+        to: 'grod220@gmail.com',
+        subject: 'testerrrr',
+        html: `Mail of test sendmail: New email ${email}`,
+      },
+      function(err, reply) {
+        if (err) {
+          reject(err)
+          console.log(err && err.stack)
+        } else {
+          resolve(reply)
+          console.dir(reply)
+        }
+      }
+    )
   })
-  console.log(res.data)
-  return res.data
+  // const gmail = await authorizeGmail()
+  // return gmail.users.messages.send({
+  //   userId: 'me',
+  //   requestBody: {
+  //     raw: encodeEmailMessage(email),
+  //   },
+  // })
 }
 
 const addToCol = async (range, emailAddress) => {
@@ -96,13 +119,15 @@ const addToCol = async (range, emailAddress) => {
 exports.handler = async function(event, context, callback) {
   try {
     const emailToSignup = JSON.parse(event.body).email
-    const sheetsRes = await addToCol('Local!F2', emailToSignup) // don't resolve though. Not going to fix if failure.
-    // const emailResponse = await sendToJoe(emailToSignup)
+    // const sheetsRes = await addToCol('Local!F2', emailToSignup) // don't resolve though. Not going to fix if failure.
+    const emailResponse = await sendToJoe(emailToSignup)
+    console.log(emailResponse)
     return {
-      statusCode: sheetsRes.status,
-      body: JSON.stringify(sheetsRes.data),
+      statusCode: emailResponse.status,
+      body: JSON.stringify(emailResponse),
     }
   } catch (err) {
+    console.log(err)
     return { statusCode: 500, body: err.toString() }
   }
 }
