@@ -65,7 +65,7 @@ class CoreValues extends React.Component {
             smallText="our foundation"
           />
           <Separator />
-          <NumberBlock num={2} bigText="God's word" smallText="our guide" />
+          <NumberBlock num={2} bigText="God's Word" smallText="our guide" />
           <Separator />
           <NumberBlock num={3} bigText="The Gospel" smallText="our anthem" />
           <Separator />
