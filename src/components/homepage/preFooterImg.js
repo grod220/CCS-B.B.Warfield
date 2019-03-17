@@ -25,12 +25,7 @@ const WithBackground = styled.div`
 
 const PreFooterImg = () => (
   <Container>
-    <Parallax
-      offsetYMin={-40}
-      offsetYMax={0}
-      slowerScrollRate
-      disabled={isMobile}
-    >
+    <Parallax y={[-30, 0]} disabled={isMobile}>
       <WithBackground />
     </Parallax>
   </Container>

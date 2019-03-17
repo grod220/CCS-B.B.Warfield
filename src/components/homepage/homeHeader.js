@@ -81,12 +81,7 @@ class HomeHeader extends React.Component {
   render() {
     return (
       <Container>
-        <Parallax
-          offsetYMin={-50}
-          offsetYMax={50}
-          slowerScrollRate
-          disabled={isMobile}
-        >
+        <Parallax y={[-30, 30]} disabled={isMobile}>
           <WithBackground />
         </Parallax>
         <MissionBlock>
