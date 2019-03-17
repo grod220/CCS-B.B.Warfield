@@ -6,6 +6,7 @@ import Layout from '../components/shared/layout'
 import HomeHeader from '../components/homepage/homeHeader'
 import ServiceTimes from '../components/homepage/serviceTimes'
 import SummaryBlock from '../components/homepage/summaryBlock'
+import HomePopup from '../components/homepage/homePopup'
 import CalendarWidget from '../components/homepage/calendarWidget'
 import CoreValues from '../components/shared/coreValues'
 import StayInTouch from '../components/shared/stayInTouch'
@@ -45,6 +46,7 @@ class IndexPage extends React.Component {
           title={siteMetadata.index.title}
           meta={[siteMetadata.meta.keywords, siteMetadata.index.description]}
         />
+        <HomePopup />
         <HomeHeader />
         <ServiceTimes />
         <SummaryBlock />
