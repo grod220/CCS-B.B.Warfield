@@ -69,12 +69,7 @@ const FeatureWithBackground = ({
       {title ? <Title>{title}</Title> : ''}
       {children}
     </HighlightText>
-    <Parallax
-      offsetYMin={-40}
-      offsetYMax={40}
-      slowerScrollRate
-      disabled={isMobile || disablePL}
-    >
+    <Parallax y={[-30, 30]} disabled={isMobile || disablePL}>
       <WithBackground image={image} customHeight={backgroundHeight} />
     </Parallax>
   </Container>

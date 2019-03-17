@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import BibleImg from "../../images/homepage-bible-open.jpg";
+import CongregationImg from "../../images/homepage-congregation.jpg";
 import FeatureWithBackground from "../shared/featureWithBackground";
 
 const CustomStyle = styled.div`
@@ -23,7 +23,7 @@ const EnglishBold = styled.span`
 `;
 
 const SummaryBlock = () => (
-  <FeatureWithBackground image={BibleImg}>
+  <FeatureWithBackground image={CongregationImg}>
     <CustomStyle>
       We are an <EnglishBold>English-speaking</EnglishBold> church in the heart
       of Stockholm, brought and bound together by one person: Jesus.
