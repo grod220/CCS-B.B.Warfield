@@ -17,7 +17,7 @@ module.exports = {
       description: {
         name: 'description',
         content:
-          'We are an English-speaking church in the heart of Stockholm, brought and bound together by one person: Jesus. Come and see that the Lord is good.',
+          'We are an English speaking church in the heart of Stockholm, brought and bound together by one person: Jesus. Come and see that the Lord is good.',
       },
     },
     sundays: {

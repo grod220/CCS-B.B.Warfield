@@ -25,7 +25,7 @@ const EnglishBold = styled.span`
 const SummaryBlock = () => (
   <FeatureWithBackground image={CongregationImg}>
     <CustomStyle>
-      We are an <EnglishBold>English-speaking</EnglishBold> church in the heart
+      We are an <EnglishBold>English speaking</EnglishBold> church in the heart
       of Stockholm, brought and bound together by one person: Jesus.
     </CustomStyle>
   </FeatureWithBackground>
