@@ -1,7 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React, { useState } from 'react'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Hamburger from './hamburger'
+import ColorGenerator from '../shared/eventsUtil'
 
 const Container = styled.div`
   position: absolute;
@@ -99,47 +100,57 @@ const MobileMenu = styled.div`
   opacity: ${props => (props.mobileMenuActive ? 0.98 : 0)};
 `
 
-class Navigation extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showMobileMenu: false,
+const areUpcomingEvents = () => {
+  const allEvents = useStaticQuery(graphql`
+    query {
+      allGoogleSheetCalendarRow {
+        edges {
+          node {
+            date
+          }
+        }
+      }
     }
+  `).allGoogleSheetCalendarRow.edges.map(edge => edge.node)
+  const eventsToCome = ColorGenerator.removeOldEvents(allEvents)
+  return Boolean(eventsToCome.length)
+}
 
-    this.menuList = [
-      'Sundays',
-      'Who we are',
-      'Calendar',
-      'Get in touch',
-      'Facebook',
-    ].filter(item => this.props.hasCalEntries || item !== 'Calendar')
-  }
+const menuList = [
+  'Sundays',
+  'Who we are',
+  'Calendar',
+  'Get in touch',
+  'Facebook',
+]
 
-  toggleMobileMenu = status => () =>
-    this.setState(prevState => ({
-      showMobileMenu: status !== undefined ? status : !prevState.showMobileMenu,
-    }))
+export default function Navigation() {
+  const [mobileMenu, setMobileMenu] = useState(false)
 
-  render() {
-    return (
-      <>
-        <Container>
-          <BrandName>
-            <Hamburger
-              mobileMenuActive={this.state.showMobileMenu}
-              triggerFunc={this.toggleMobileMenu()}
-            />
-            <Link to="/" onClick={this.toggleMobileMenu(false)}>
-              Calvary Stockholm
-            </Link>
-          </BrandName>
-          <Nav mobileMenuActive={this.state.showMobileMenu}>
-            {this.menuList.map((itemTitle, index) => (
+  const toggleMobileMenu = () => setMobileMenu(!mobileMenu)
+  const hideMobileMenu = () => setMobileMenu(false)
+
+  return (
+    <>
+      <Container>
+        <BrandName>
+          <Hamburger
+            mobileMenuActive={mobileMenu}
+            triggerFunc={toggleMobileMenu}
+          />
+          <Link to="/" onClick={hideMobileMenu}>
+            Calvary Stockholm
+          </Link>
+        </BrandName>
+        <Nav mobileMenuActive={mobileMenu}>
+          {menuList
+            .filter(item => item !== 'Calendar' || areUpcomingEvents())
+            .map((itemTitle, index) => (
               <Item
-                mobileMenuActive={this.state.showMobileMenu}
+                mobileMenuActive={mobileMenu}
                 delay={index * 125}
                 key={index}
-                onClick={this.toggleMobileMenu(false)}
+                onClick={hideMobileMenu}
               >
                 {itemTitle === 'Facebook' ? (
                   <a
@@ -158,12 +169,9 @@ class Navigation extends React.Component {
                 )}
               </Item>
             ))}
-          </Nav>
-        </Container>
-        <MobileMenu mobileMenuActive={this.state.showMobileMenu} />
-      </>
-    )
-  }
+        </Nav>
+      </Container>
+      <MobileMenu mobileMenuActive={mobileMenu} />
+    </>
+  )
 }
-
-export default Navigation
