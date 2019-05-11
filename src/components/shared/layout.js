@@ -8,7 +8,7 @@ import 'typeface-crimson-text'
 import './layout.css'
 
 import Footer from '../shared/footer'
-import Navigation from '../shared/Navigation'
+import Navigation from '../shared/navigation'
 
 const Container = styled.div`
   position: relative;
