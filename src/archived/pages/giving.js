@@ -30,24 +30,24 @@ const Giving = ({
 
 export default Giving
 
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        giving {
-          title
-          description {
-            name
-            content
-          }
-        }
-        meta {
-          keywords {
-            name
-            content
-          }
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query {
+//     site {
+//       siteMetadata {
+//         giving {
+//           title
+//           description {
+//             name
+//             content
+//           }
+//         }
+//         meta {
+//           keywords {
+//             name
+//             content
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
