@@ -1,7 +1,6 @@
 {
   "name": "ccs-b.b.warfield",
   "description": "Calvary Chapel Stockholm website project",
-  "version": "2.4",
   "author": "Gabe Rodriguez",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
@@ -35,7 +34,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build && netlify-lambda build lambda",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
     "lambda-local": "netlify-lambda serve lambda"
