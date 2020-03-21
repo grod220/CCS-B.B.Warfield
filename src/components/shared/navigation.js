@@ -100,18 +100,7 @@ const MobileMenu = styled.div`
   opacity: ${props => (props.mobileMenuActive ? 0.98 : 0)};
 `
 
-const areUpcomingEvents = () => {
-  const allEvents = useStaticQuery(graphql`
-    query {
-      allGoogleSheetCalendarRow {
-        edges {
-          node {
-            date
-          }
-        }
-      }
-    }
-  `).allGoogleSheetCalendarRow.edges.map(edge => edge.node)
+const areUpcomingEvents = (allEvents) => {
   const eventsToCome = ColorGenerator.removeOldEvents(allEvents)
   return Boolean(eventsToCome.length)
 }
@@ -130,6 +119,18 @@ export default function Navigation() {
   const toggleMobileMenu = () => setMobileMenu(!mobileMenu)
   const hideMobileMenu = () => setMobileMenu(false)
 
+  const allEvents = useStaticQuery(graphql`
+    query {
+      allGoogleSheetCalendarRow {
+        edges {
+          node {
+            date
+          }
+        }
+      }
+    }
+  `).allGoogleSheetCalendarRow.edges.map(edge => edge.node);
+
   return (
     <>
       <Container>
@@ -144,7 +145,7 @@ export default function Navigation() {
         </BrandName>
         <Nav mobileMenuActive={mobileMenu}>
           {menuList
-            .filter(item => item !== 'Calendar' || areUpcomingEvents())
+            .filter(item => item !== 'Calendar' || areUpcomingEvents(allEvents))
             .map((itemTitle, index) => (
               <Item
                 mobileMenuActive={mobileMenu}
