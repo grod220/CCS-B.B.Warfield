@@ -1,4 +1,8 @@
-# Calvary Stockholm ✝
+# V3 update here: https://github.com/grod220/cs-clemens-romanus
+
+
+=== V2 is now deprecated ===
+## Calvary Stockholm ✝
 ##### Version 2: [B.B Warfield](https://en.wikipedia.org/wiki/B._B._Warfield)
 
 The app repo for calvarystockholm.se. If you're in the Stockholm area, give us a visit!
