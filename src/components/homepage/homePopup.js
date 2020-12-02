@@ -2,7 +2,7 @@ import React from 'react'
 import ReactModal from 'react-modal'
 import styled from 'styled-components'
 
-const IS_LIVE_UNTIL = new Date(2020, 4, 1)
+const IS_LIVE_UNTIL = new Date(2021, 1, 30)
 
 const AlertTitle = styled.h2`
   font-family: Open Sans, Arial, Helvetica, sans-serif;
@@ -78,10 +78,8 @@ class HomePopup extends React.Component {
             </AlertTitle>
             <AlertBody>
               <p>
-                In order to live out our mandate to <i>love others</i>, our congregation will suspend all general
-                gatherings (Sunday worship, Bible studies, and public prayer meetings) until further notice. This is
-                done in order to reduce potential spread of the corona virus. We are praying that God’s grace will
-                abound in the midst of this present sickness and suffering.
+                Until further notice: Calvary Stockholm has <i>cancelled</i> public Sunday worship in compliance with national COVID guidelines in Sweden.
+                We are praying that God’s grace will abound in the midst of this present sickness and suffering.
               </p>
               <p>
                 Contact: <a href="mailto:calvarystockholm@gmail.com">calvarystockholm@gmail.com</a> if you seek
