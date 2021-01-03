@@ -71,19 +71,19 @@ class HomePopup extends React.Component {
             }}
           >
             <AlertTitle>
-              Notice{' '}
+              Attention{' '}
               <span role="img" aria-label="church">
                 ⛪
               </span>
             </AlertTitle>
             <AlertBody>
               <p>
-                Until further notice: Calvary Stockholm has <i>cancelled</i> public Sunday worship in compliance with national COVID guidelines in Sweden.
-                We are praying that God’s grace will abound in the midst of this present sickness and suffering.
+                Until further notice: Calvary Stockholm will not meet in-person for Sunday worship, but virtually.
+                Please reach out to us at <a href="mailto:calvarystockholm@gmail.com">calvarystockholm@gmail.com</a> if
+                you'd like to join, or seek assistance/prayer.
               </p>
               <p>
-                Contact: <a href="mailto:calvarystockholm@gmail.com">calvarystockholm@gmail.com</a> if you seek
-                assistance or prayer.
+                We are praying that God’s grace will abound in the midst of this present sickness and suffering.
               </p>
             </AlertBody>
             <BlueButton onClick={this.handleCloseModal}>Close</BlueButton>
