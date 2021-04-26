@@ -13,7 +13,7 @@ module.exports = {
       },
     },
     index: {
-      title: "Calvary Stockholm :: Building God's Kingdom",
+      title: "Calvary Stockholm :: Loving God, Loving Others",
       description: {
         name: 'description',
         content:

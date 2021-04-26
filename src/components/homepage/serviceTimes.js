@@ -25,10 +25,10 @@ const ServiceTimes = () => (
   <WhiteContentBlock title={"Service Times"}>
     <Container>
       <ServiceTime>
-        Sundays @ 3pm, Korskyrkan’s Café{" "}
+        Sundays @ 3pm {" "}
         <MapsLink>
           (<a
-            href="https://goo.gl/maps/Su7ffMHUFaS2"
+            href="https://goo.gl/maps/B5uYD1Tn7VsyYUsv7"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -37,10 +37,7 @@ const ServiceTimes = () => (
         </MapsLink>
       </ServiceTime>
       <p>
-        The address is Birger Jarlsgatan 66B. It's only 5 min walk away from
-        Rådmansgatan subway station (green line). Above is a picture of the
-        outside. It’s not the main entrance, but the door to its left (look for
-        66B). And feel free to call if you get lost!
+        The address is Nybrogatan 79B. Feel free to call if you get lost!
       </p>
     </Container>
   </WhiteContentBlock>
