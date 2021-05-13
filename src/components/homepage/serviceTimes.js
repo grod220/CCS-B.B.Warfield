@@ -25,7 +25,7 @@ const ServiceTimes = () => (
   <WhiteContentBlock title={"Service Times"}>
     <Container>
       <ServiceTime>
-        Sundays @ 3pm {" "}
+        Sundays @ 10am {" "}
         <MapsLink>
           (<a
             href="https://goo.gl/maps/B5uYD1Tn7VsyYUsv7"
