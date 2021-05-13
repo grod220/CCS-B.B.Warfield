@@ -38,7 +38,7 @@ const ServiceTimeAndLocation = () => (
   <TwoHalfWhiteBlock>
     <LeftDivFix>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2034.4975008107906!2d18.0825308!3d59.3413429!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d44317956af%3A0x264cf8d1e4fa691f!2sNybrogatan%2079B%2C%20114%2041%20Stockholm%2C%20Sweden!5e0!3m2!1sen!2sde!4v1619426728178!5m2!1sen!2sde"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4070.0867418580538!2d18.025656587969877!3d59.332229728329295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d7de83ee177%3A0x99fbf08a73a513ae!2sSalvation%20Army%20Kungsholmen!5e0!3m2!1sen!2sde!4v1620919001668!5m2!1sen!2sde"
         width="100%"
         height="400"
         frameBorder="0"
@@ -53,8 +53,9 @@ const ServiceTimeAndLocation = () => (
     </LeftDivFix>
     <div>
       <Title>Service Time & Location</Title>
-      <p>Sundays @ 10:00am </p>
-      <p>Nybrogatan 79B, 114 41 Stockholm</p>
+      <p>Sundays @ 10:00am</p>
+      <p>Sankt Göransgatan 61, 112 39 Stockholm</p>
+      <p>Quite close to the Friedhelmsplan T-Bana station. We meet in the Salvation Army Kungsholmen building.</p>
     </div>
   </TwoHalfWhiteBlock>
 );

@@ -28,7 +28,7 @@ const ServiceTimes = () => (
         Sundays @ 10am {" "}
         <MapsLink>
           (<a
-            href="https://goo.gl/maps/B5uYD1Tn7VsyYUsv7"
+            href="https://goo.gl/maps/eaimtATiQ1GU6WMG7"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -37,7 +37,7 @@ const ServiceTimes = () => (
         </MapsLink>
       </ServiceTime>
       <p>
-        The address is Nybrogatan 79B. Feel free to call if you get lost!
+        We meet at the Salvation Army in Kungsholmen. The address is <b>Sankt Göransgatan 61</b>. Quite close to Fridhemsplan as well as Kronobergsparken. <br />Feel free to call if you get lost!
       </p>
     </Container>
   </WhiteContentBlock>
